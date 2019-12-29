@@ -4,9 +4,8 @@
 
 **Sorting Problem**
 
-```math
-Input: A sequence of n numbers $<a_1, a_2, ... , a_n>$
-Ouput: A permutation (reordering) $<b_1, b_2, ... , b_n>$ of the input sequence such that 
-$b_1 \leq b_2 \leq ... \leq b_n$
-```
+Input: A sequence of n numbers $`<a_1, a_2, ... , a_n>`$
+Ouput: A permutation (reordering) $`<b_1, b_2, ... , b_n>`$ of the input sequence such that 
+$`b_1 \leq b_2 \leq ... \leq b_n`$
+
 
