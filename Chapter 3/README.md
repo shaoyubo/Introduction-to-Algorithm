@@ -4,4 +4,10 @@
 
 **Asymptotic notation, functions, and running times**
 
-###Theta;-notation
+1. &Theta;-notation
+
+For a given function g(n), we denote by &Theta;(g(n)) the set of functiuons
+
+```
+&Theta;(g(n))
+```
