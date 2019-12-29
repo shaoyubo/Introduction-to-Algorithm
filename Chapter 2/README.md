@@ -53,7 +53,7 @@ INSERTION-SORT(A)
 
 - Combine the solutionsof the subproblem into the solution for the original problem.
 
-**Merge sort &Theta;(n)**
+**Merge sort &Theta;(nlgn)**
 
 1. Divide: Divide the n-element sequence to be sorted into two subsequences of n/2 elements each.
 
@@ -96,4 +96,14 @@ MERGE-SORT(A, p, r)
 		MERGE(A, p, q, r)
 ```
 
+### 2.3.2 Analyzing the divide-and-conquer algorithms
 
+**Analysis of merge sort**
+
+1. Divide: The divide step just computes the middle of the subarray, which takes constant time. Thus, D(n) =  &Theta;(1).
+
+2. Conquer: We recursively solve two subproblems, each of size n/2, which contributes 2T(n/2) to the running time.
+
+3. Combine: We have already noted that the MERGE procedure on an n-element subarray takes time &Theta;(n), and so C(n) = &Theta;(n).
+
+- T(n) = 2T(n/2) + &Theta;(n) if n > 1 and thus the running time for merge sort is &Theta;(nlgn).
