@@ -88,6 +88,26 @@ One way to define it is by f(n) &in; &omega;(g(n)) if and only if g(n) &in; o(f(
 
 > For any real numbers a and b, exactly one of the following must hold: a < b, a = b, a > b.
 
+## 3.2 Standard notations and common functions
+
+**Monotonicity**
+
+>A function f(n) is monotonically increasing if m &le; n implies f(m) &le; f(n).
+
+>A function f(n) is monotonically decreasing if m &le; n implies f(m) &ge; f(n).
+
+>A function f(n) is strictly increasing if m &le; n implies f(m) < f(n).
+
+>A function f(n) is strictly decreasing if m &le; n implies f(m) > f(n).
+
+**Floors and ceilings**
+
+For any real number x, we denote the greatest integer less than or equal to x by &lfloor;x&rfloor; and the least integer greater than or equal to x by &lceil;x&rceil;.
+
+> For all real x, x - 1 < &lfloor;x&rfloor; &le; x &le; &lceil;x&rceil; < x + 1.
+
+
+
 
 
 
