@@ -41,9 +41,18 @@ INSERTION-SORT(A)
 
 - Consider only the leading term of a formula, since the lower-order terms are relatively insiginificant for large values of n. We also ignore the leading term's constant coefficient.
 
-- We write that insertion sort has a worst-case running time of &theta;(n<sub>2</sub>)
+- We write that insertion sort has a worst-case running time of &theta;(n<sub>2</sub>).
 
 ## 2.3 Designing algorithms
+
+### 2.3.1 The divide-and-conquer approach
+
+- Divide the problem into a number of subproblems that are smaller instances of the same problems.
+
+- Conquer the subproblems by solving them recursively. If the subproblem sizes are small enough, however, just solve the subproblems in a straightforward manner.
+
+- Combine the solutionsof the subproblem into the solution for the original problem.
+
 
 
 
