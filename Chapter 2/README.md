@@ -63,7 +63,7 @@ INSERTION-SORT(A)
 
 - MERGE(A, p, q, r), where A is an array and p, q, r are indices into the array such that p <= q < r. The procedure assumes that the subarrays A[p .. q] and A[q + 1 .. r] are in sorted order. It merges them to form a single sorted subarray that replaces the current subarray A[p .. r].
 
-```
+```math
 MERGE(A, p, q, r)
 	n1 = q - p + 1
 	n2 = r - q
@@ -72,7 +72,7 @@ MERGE(A, p, q, r)
 		L[i] = A[p + i - 1]
 	for j = 1 to n2
 		R[i] = A[q + j]
-	L[n1 + 1] = $\infty$
+	L[n1 + 1] = \infty
 
 ```
 
