@@ -136,14 +136,17 @@ where the constant a<sub>0</sub>, a<sub>1</sub>, ... , a<sub>d</sub> are the coe
 
 **Factorials**
 
-> n! = 1*2*...*n for integers n &ge; 0.
+> n! = 1&sdot;2&sdot;...&sdot;n for integers n &ge; 0.
 
 **Functional iteration**
 
-**The iterated logarithm function**
+We use the notation f<sup>(i)</sup> to denote the function f(n) iteratively applied i times to an initial value of n.
 
 **Fibonacci numbers**
 
+We define the Fibonacci numbers by the following recurrence:
+
+> F<sub>0</sub> = 0, F<sub>1</sub> = 1, F<sub>i</sub> = F<sub>i - 1</sub> + F<sub>i - 2</sub> for i &ge;2. 
 
 
 
