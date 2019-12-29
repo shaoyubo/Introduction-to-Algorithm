@@ -10,11 +10,14 @@
 b<sub>1</sub> <= b<sub>2</sub> <= ... <= b<sub>n</sub>
 
 **Data Structure**
-A data structure is a way to store and organize data in order to facilitate access and modifications.
+
+- A data structure is a way to store and organize data in order to facilitate access and modifications.
 
 ## 1.2 Algorithms as a technology
+
 **Efficiency**
-Different algorithms devised to solve the same problem often differ dramatically in their efficiency. These differences can be much more significant than differences due to hardware and software.
+
+- Different algorithms devised to solve the same problem often differ dramatically in their efficiency. These differences can be much more significant than differences due to hardware and software.
 
 
 
