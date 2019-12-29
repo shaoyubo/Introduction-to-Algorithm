@@ -21,6 +21,28 @@ INSERTION-SORT(A)
 		A[i + 1] = key
 ```
 
+## 2.2 Analyzing algorithms
+
+- Analyzing an algorithm has come to mean predicting the resources that the algorithm requires.
+
+**Analysis of insertion sort**
+
+- The best case occurs if the array is already sorted. Thus it is a linear function of n.
+
+- If the array is in reverse sorted order, in decreasing order - the worst case result. Thus it is a quadratic function fo n.
+
+**Worst-case and average-case analysis**
+
+- The worst-case running time of an algorithm gives us an upper bound on the running time for any input.
+
+- The "average-case" is often roughly as bad as the worst case.
+
+**Order of growth**
+
+- Consider only the leading term of a formula, since the lower-order terms are relatively insiginificant for large values of n. We also ignore the leading term's constant coefficient.
+
+## Designing algorithms
+
 
 
 
