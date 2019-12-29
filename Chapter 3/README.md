@@ -46,7 +46,7 @@ Intuitively, in o-notation, the function f(n) becomes insignificant relative to 
 
 We define &omega;(g(n)) as the set
 
->&omega;(g(n)) = {f(n): for any positive constants c, there exists a constant n<sub>0</sub> > 0 such that 0 <= cg(n) < f(n) for all n >= n<sub>0</sub>}.
+>&omega;(g(n)) = {f(n): for any positive constants c, there exists a constant n<sub>0</sub> > 0 such that 0 &le; cg(n) < f(n) for all n &geq; n<sub>0</sub>}.
 
 In &omega;-notation, the function f(n) becomes significant relative to g(n) as n approaches infinity.
 
