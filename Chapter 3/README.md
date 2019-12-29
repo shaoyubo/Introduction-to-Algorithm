@@ -4,9 +4,11 @@
 
 **Asymptotic notation, functions, and running times**
 
-1. &Theta;-notation
+We will use asymptotic notation primarily to describe the running times of algorithms. Asymptotic notation actually applies to functions.
+
+**&Theta;-notation**
 
 For a given function g(n), we denote by &Theta;(g(n)) the set of functiuons
 
-&Theta;(g(n)) = {f(n): there exist positiv constants c<sub>1<\sub>, }
+&Theta;(g(n)) = {f(n): there exist positive constants c<sub>1</sub>, c<sub>2</sub>, and n<sub>0</sub> such that 0 <= c<sub>1</sub>g(n) <= f(n) <= c<sub>2</sub>g(n) for all n >= n<sub>0</sub>}
 
