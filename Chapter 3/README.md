@@ -10,5 +10,15 @@ We will use asymptotic notation primarily to describe the running times of algor
 
 For a given function g(n), we denote by &Theta;(g(n)) the set of functiuons
 
-&Theta;(g(n)) = {f(n): there exist positive constants c<sub>1</sub>, c<sub>2</sub>, and n<sub>0</sub> such that 0 <= c<sub>1</sub>g(n) <= f(n) <= c<sub>2</sub>g(n) for all n >= n<sub>0</sub>}
+&Theta;(g(n)) = {f(n): there exist positive constants c<sub>1</sub>, c<sub>2</sub>, and n<sub>0</sub> such that 0 <= c<sub>1</sub>g(n) <= f(n) <= c<sub>2</sub>g(n) for all n >= n<sub>0</sub>}.
+
+** O-notation**
+
+The &Theta;-notation asymptotically bounds a function from above and below. When we have only an asymptotic upper bound, we use O-notation.
+
+For a given function g(n), we denote by O(g(n)) the set of functiuons
+
+O(g(n)) = {f(n): there exist positive constants c and n<sub>0</sub> such that 0 <= f(n) <= cg(n) for all n >= n<sub>0</sub>}.
+
+** &Omega;-notation**
 
