@@ -57,22 +57,36 @@ One way to define it is by f(n) &in; &omega;(g(n)) if and only if g(n) &in; o(f(
 - Transitivity
 
 >f(n) = &Theta;(g(n)) and g(n) = &Theta;(h(n)) imply f(n) = &Theta;(h(n)).
+
 >f(n) = O(g(n)) and g(n) = O(h(n)) imply f(n) = O(h(n)).
+
 >f(n) = &Omega;(g(n)) and g(n) = &Omega;(h(n)) imply f(n) = &Omega;(h(n)).
+
 >f(n) = o(g(n)) and g(n) = o(h(n)) imply f(n) = o(h(n)).
+
 >f(n) = &omega;(g(n)) and g(n) = &omega;(h(n)) imply f(n) = &omega;(h(n)).
 
 - Reflexivity
 
->f(n) = &Theta;(f(n)) 
->f(n) = O(f(n)) 
->f(n) = &Omega;(f(n)) 
+>f(n) = &Theta;(f(n)).
+
+>f(n) = O(f(n)).
+
+>f(n) = &Omega;(f(n)).
 
 - Symmetry
 
+>f(n) = &Theta;(g(n)) if and only if g(n) = &Theta;(f(n)).
+
 - Transpose symmetry
 
+>f(n) = O(g(n)) if and only if g(n) = &Omega;(f(n)).
+
+>f(n) = o(g(n)) if and only if g(n) = &omega;(f(n)).
+
 - Trichotomy
+
+> For any real numbers a and b, exactly one of the following must hold: a < b, a = b, a > b.
 
 
 
