@@ -41,7 +41,9 @@ INSERTION-SORT(A)
 
 - Consider only the leading term of a formula, since the lower-order terms are relatively insiginificant for large values of n. We also ignore the leading term's constant coefficient.
 
-## Designing algorithms
+- We write that insertion sort has a worst-case running time of &theta (n<sub>2<\sub>)
+
+## 2.3 Designing algorithms
 
 
 
