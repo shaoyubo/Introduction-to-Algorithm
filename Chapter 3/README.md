@@ -8,6 +8,5 @@
 
 For a given function g(n), we denote by &Theta;(g(n)) the set of functiuons
 
-```
-&Theta;(g(n))
-```
+&Theta;(g(n)) = {f(n): there exist positiv constants c<sub>1<\sub>, }
+
