@@ -32,11 +32,25 @@ For a given function g(n), we denote by &Omega;(g(n)) the set of functiuons
 
 >For any two functions f(n) and g(n), we have f(n) = &Theta;(g(n)) if and only if f(n) = O(g(n)) and f(n) = &Omega;(g(n)).
 
-**o-notation*
+**o-notation**
 
 We use o-notation to denote an upper bound that is not asymptotically tight. 
 
 We formally define o(g(n)) as the set
 
->o(g(n)) = {f(n): for any positive constants c > 0, there exists a constant n<sub>0</sub> > 0 such that 0 <= f(n) < cg(n) for all n >= n<sub>0</sub>}.
+>o(g(n)) = {f(n): for any positive constants c, there exists a constant n<sub>0</sub> > 0 such that 0 <= f(n) < cg(n) for all n >= n<sub>0</sub>}.
+
+Intuitively, in o-notation, the function f(n) becomes insignificant relative to g(n) as n approaches infinity.
+
+**&omega;-notation**
+
+We define &omega;(g(n)) as the set
+
+>&omega;(g(n)) = {f(n): for any positive constants c, there exists a constant n<sub>0</sub> > 0 such that 0 <= cg(n) < f(n) for all n >= n<sub>0</sub>}.
+
+In &omega;-notation, the function f(n) becomes significant relative to g(n) as n approaches infinity.
+
+One way to define it is by f(n) &in; &omega;(g(n)) if and only if g(n) &in; o(f(n)).
+
+
 
