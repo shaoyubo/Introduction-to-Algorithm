@@ -122,7 +122,9 @@ It follows that
 
 Given a nonegativ integer d, a polynomial in n of degree d is a function p(n) of the form
 
-> p(n) = &Sum;<sub>i=0</sub><sup>d</sup>
+> p(n) = &Sum; <sub>i=0</sub> <sup>d</sup> a_<sub>i</sub>n<sup>i</sup>,
+
+where the constant 
 
 **Exponentials**
 
