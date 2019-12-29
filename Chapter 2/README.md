@@ -7,7 +7,7 @@
 - Input: A sequence of n numbers a<sub>1</sub>, a<sub>2</sub>, ... , a<sub>n</sub>.
 
 - Ouput: A permutation (reordering) b<sub>1</sub>, b<sub>2</sub>, ... , b<sub>n</sub> of the input sequence such that 
-b<sub>1</sub> <= b<sub>2</sub> <= ... <= b<sub>n</sub>.
+b<sub>1</sub> &le; b<sub>2</sub> &le; ... &le; b<sub>n</sub>.
 
 ```
 INSERTION-SORT(A)
@@ -61,7 +61,7 @@ INSERTION-SORT(A)
 
 3. Combine: Merge the two sorted subsequences to produce the sorted answer.
 
-- MERGE(A, p, q, r), where A is an array and p, q, r are indices into the array such that p <= q < r. The procedure assumes that the subarrays A[p .. q] and A[q + 1 .. r] are in sorted order. It merges them to form a single sorted subarray that replaces the current subarray A[p .. r]. It runs in &Theta;(n) time.
+- MERGE(A, p, q, r), where A is an array and p, q, r are indices into the array such that p &le; q < r. The procedure assumes that the subarrays A[p .. q] and A[q + 1 .. r] are in sorted order. It merges them to form a single sorted subarray that replaces the current subarray A[p .. r]. It runs in &Theta;(n) time.
 
 ```
 MERGE(A, p, q, r)
@@ -85,7 +85,7 @@ MERGE(A, p, q, r)
 			j = j + 1
 ```
 
-- MERGE-SORT(A, p, r) sorts the elements in the subarray A[p .. r]. If p >= r, the subarray has at most one element and is therefore already sorted. Otherwise, the divide step simply computes an index q that partitions A[p .. r] into two subarrays.
+- MERGE-SORT(A, p, r) sorts the elements in the subarray A[p .. r]. If p &ge; r, the subarray has at most one element and is therefore already sorted. Otherwise, the divide step simply computes an index q that partitions A[p .. r] into two subarrays.
 
 ```
 MERGE-SORT(A, p, r)

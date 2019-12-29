@@ -10,7 +10,7 @@ We will use asymptotic notation primarily to describe the running times of algor
 
 For a given function g(n), we denote by &Theta;(g(n)) the set of functiuons
 
->&Theta;(g(n)) = {f(n): there exist positive constants c<sub>1</sub>, c<sub>2</sub>, and n<sub>0</sub> such that 0 <= c<sub>1</sub>g(n) <= f(n) <= c<sub>2</sub>g(n) for all n >= n<sub>0</sub>}.
+>&Theta;(g(n)) = {f(n): there exist positive constants c<sub>1</sub>, c<sub>2</sub>, and n<sub>0</sub> such that 0 &le; c<sub>1</sub>g(n) &le; f(n)&le; c<sub>2</sub>g(n) for all n &ge; n<sub>0</sub>}.
 
 **O-notation**
 
@@ -18,7 +18,7 @@ The &Theta;-notation asymptotically bounds a function from above and below. When
 
 For a given function g(n), we denote by O(g(n)) the set of functiuons
 
->O(g(n)) = {f(n): there exist positive constants c and n<sub>0</sub> such that 0 <= f(n) <= cg(n) for all n >= n<sub>0</sub>}.
+>O(g(n)) = {f(n): there exist positive constants c and n<sub>0</sub> such that 0 &le; f(n) &le; cg(n) for all n &ge; n<sub>0</sub>}.
 
 **&Omega;-notation**
 
@@ -26,7 +26,7 @@ Just as O-notation provides an asymptotic upper bound on a function, &Omega;-not
 
 For a given function g(n), we denote by &Omega;(g(n)) the set of functiuons
 
->&Omega;(g(n)) = {f(n): there exist positive constants c and n<sub>0</sub> such that 0 <= cg(n) <= f(n) for all n >= n<sub>0</sub>}.
+>&Omega;(g(n)) = {f(n): there exist positive constants c and n<sub>0</sub> such that 0 &le; cg(n) &le; f(n) for all n &ge; n<sub>0</sub>}.
 
 **Theorem 3.1**
 
@@ -38,7 +38,7 @@ We use o-notation to denote an upper bound that is not asymptotically tight.
 
 We formally define o(g(n)) as the set
 
->o(g(n)) = {f(n): for any positive constants c, there exists a constant n<sub>0</sub> > 0 such that 0 <= f(n) < cg(n) for all n >= n<sub>0</sub>}.
+>o(g(n)) = {f(n): for any positive constants c, there exists a constant n<sub>0</sub> > 0 such that 0 &le; f(n) < cg(n) for all n &ge; n<sub>0</sub>}.
 
 Intuitively, in o-notation, the function f(n) becomes insignificant relative to g(n) as n approaches infinity.
 
@@ -46,7 +46,7 @@ Intuitively, in o-notation, the function f(n) becomes insignificant relative to 
 
 We define &omega;(g(n)) as the set
 
->&omega;(g(n)) = {f(n): for any positive constants c, there exists a constant n<sub>0</sub> > 0 such that 0 &le; cg(n) < f(n) for all n &geq; n<sub>0</sub>}.
+>&omega;(g(n)) = {f(n): for any positive constants c, there exists a constant n<sub>0</sub> > 0 such that 0 &le; cg(n) < f(n) for all n &ge; n<sub>0</sub>}.
 
 In &omega;-notation, the function f(n) becomes significant relative to g(n) as n approaches infinity.
 
