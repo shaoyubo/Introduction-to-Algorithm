@@ -72,7 +72,7 @@ MERGE(A, p, q, r)
 		L[i] = A[p + i - 1]
 	for j = 1 to n2
 		R[i] = A[q + j]
-	L[n1 + 1] = \infty
+	L[n1 + 1] = $\infty$
 
 ```
 
