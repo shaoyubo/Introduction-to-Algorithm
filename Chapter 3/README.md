@@ -4,4 +4,4 @@
 
 **Asymptotic notation, functions, and running times**
 
-***- &Theta;-notation***
+###Theta;-notation
