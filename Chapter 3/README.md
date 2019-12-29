@@ -120,11 +120,13 @@ It follows that
 
 **Polynomials**
 
-Given a nonegativ integer d, a polynomial in n of degree d is a function p(n) of the form
+Given a nonegative integer d, a polynomial in n of degree d is a function p(n) of the form
 
-> p(n) = &Sum; <sub>i=0</sub> <sup>d</sup> a_<sub>i</sub>n<sup>i</sup>,
+> p(n) = &Sum;<sub>i=0</sub><sup>d</sup> a<sub>i</sub>n<sup>i</sup>,
 
-where the constant 
+where the constant a<sub>0</sub>, a<sub>1</sub>, ... , a<sub>d</sub> are the coefficients of the polynomial and a<sub>d</sub> &ne; 0.
+
+
 
 **Exponentials**
 
