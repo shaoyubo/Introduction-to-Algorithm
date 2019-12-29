@@ -4,7 +4,7 @@
 
 **Sorting Problem**
 
-Input: A sequence of n numbers $`<a_1, a_2, ... , a_n>`$
+Input: A sequence of n numbers a<sup>1</sup>, a<sup>2</sup>, ... , a<sup>n</sup>
 Ouput: A permutation (reordering) $`<b_1, b_2, ... , b_n>`$ of the input sequence such that 
 $`b_1 \leq b_2 \leq ... \leq b_n`$
 
