@@ -106,6 +106,27 @@ For any real number x, we denote the greatest integer less than or equal to x by
 
 > For all real x, x - 1 < &lfloor;x&rfloor; &le; x &le; &lceil;x&rceil; < x + 1.
 
+The floor function f(x) = &lfloor;x&rfloor; is monotonically increasing as is the ceiling function f(x) = &lceil;x&rceil;.
+
+**Modular arithmetic**
+
+For any integer a and any positive integer n, the value a mod n is the remainder (or residue) of the quotient a/n:
+
+> a mod n = a - n &lfloor;a/n&rfloor;. 
+
+It follows that 
+
+> 0 &le; a mod n < n.
+
+**Polynomials**
+
+**Exponentials**
+
+**Lograithms**
+
+**Factorials**
+
+**Functional iteration**
 
 
 
