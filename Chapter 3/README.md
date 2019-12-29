@@ -126,13 +126,17 @@ Given a nonegative integer d, a polynomial in n of degree d is a function p(n) o
 
 where the constant a<sub>0</sub>, a<sub>1</sub>, ... , a<sub>d</sub> are the coefficients of the polynomial and a<sub>d</sub> &ne; 0.
 
-
-
 **Exponentials**
+
+> For all real constants a and b such that a > 1, n<sup>b</sup> = o(a<sup>n</sup>).
 
 **Lograithms**
 
+> For any constant a > 0, lg<sup>b</sup>n = o(n<sup>a</sup>).
+
 **Factorials**
+
+> n! = 1*2*...*n for integers n &ge; 0.
 
 **Functional iteration**
 
