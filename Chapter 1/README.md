@@ -30,7 +30,8 @@ b<sub>1</sub> <= b<sub>2</sub> <= ... <= b<sub>n</sub>.
 - Different algorithms devised to solve the same problem often differ dramatically in their efficiency. These differences can be much more significant than differences due to hardware and software.
 
 **Algorithms and other technologies**
-Total system performance depends on choosing efficient algorithms as much as choosing fast hardware.
+
+- Total system performance depends on choosing efficient algorithms as much as choosing fast hardware.
 
 
 
