@@ -120,6 +120,10 @@ It follows that
 
 **Polynomials**
 
+Given a nonegativ integer d, a polynomial in n of degree d is a function p(n) of the form
+
+> p(n) = &Sum;<sub>i=0</sub><sup>d</sup>
+
 **Exponentials**
 
 **Lograithms**
@@ -127,6 +131,11 @@ It follows that
 **Factorials**
 
 **Functional iteration**
+
+**The iterated logarithm function**
+
+**Fibonacci numbers**
+
 
 
 
