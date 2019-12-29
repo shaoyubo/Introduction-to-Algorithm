@@ -18,7 +18,7 @@ The &Theta;-notation asymptotically bounds a function from above and below. When
 
 For a given function g(n), we denote by O(g(n)) the set of functiuons
 
-O(g(n)) = {f(n): there exist positive constants c and n<sub>0</sub> such that 0 <= f(n) <= cg(n) for all n >= n<sub>0</sub>}.
+>>>O(g(n)) = {f(n): there exist positive constants c and n<sub>0</sub> such that 0 <= f(n) <= cg(n) for all n >= n<sub>0</sub>}.
 
 **&Omega;-notation**
 
