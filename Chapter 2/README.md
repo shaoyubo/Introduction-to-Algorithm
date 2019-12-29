@@ -2,7 +2,7 @@
 
 ## 2.1 Insertion sort
 
-**Sorting Problem**
+**Insertion sort &Theta;(n<sup>2</sup>)**
 
 - Input: A sequence of n numbers a<sub>1</sub>, a<sub>2</sub>, ... , a<sub>n</sub>.
 
