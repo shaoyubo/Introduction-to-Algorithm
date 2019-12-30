@@ -10,8 +10,7 @@ Try every possible pair of buy and sell dates in which the buy date precedes the
 
 **A solution using divide-and-conquer**
 
-Suppose we want to find a maximum subarray of the subarray A[low .. high]. Divide-and-conquer suggests that we divide the subarray into two subarrays of as equal size as possible. That is, we find the midpoint, say mid, of the subarray, and consider the subarrays A[low .. mid] and A[mid 
-+ 1 .. high]. 
+Suppose we want to find a maximum subarray of the subarray A[low .. high]. Divide-and-conquer suggests that we divide the subarray into two subarrays of as equal size as possible. That is, we find the midpoint, say mid, of the subarray, and consider the subarrays A[low .. mid] and A[mid+1 .. high]. 
 
 The procedure FIND-MAX-CROSS-SUBARRAY (&Theta;(n) time) takes as input the array A and the indices low, mid, and high, and it returns a tuple containing the indices demarcating a maximum subarray that crosses the midpoint, along with the sum of the values in a maximum subarray.
 
@@ -37,7 +36,20 @@ FIND-MAX-CROSS-SUBARRAY(A, low, mid, high)
 With a linear-time FIND-MAX-CROSS-SUBARRAY procedure in hand, we can write pseudocode for a divide-and-conquer algorithm to solve the maximum-subarray problem:
 
 ```
-
+FIND-MAXIMUM-SUBARRAY(A, low, high)
+	if high == low		// base case: only one element
+		return (low, high, A[low])
+	else 
+		mid = Math.floor((low + high) / 2)
+		(left-low, left-high, left-sum) = FIND-MAXIMUM-SUBARRAY(A, low, mid)
+		(right-low, right-high, right-sum) = FIND-MAXIMUM-SUBARRAY(A, mid + 1, high)
+		(cross-low, cross-high, cross-sum) = FIND-MAX-CROSS-SUBARRAY(A, low, mid, high)
+		if left-sum >= right-sum and left-sum >= cross-sum
+			return (left-low, left-high, left-sum)
+		else if right-sum >= left-sum and right-sum >= cross-sum
+			return (right-low, right-high, right-sum)
+		else
+			return (cross-low, cross-high, cross-sum)
 ```
 
 
