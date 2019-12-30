@@ -58,9 +58,41 @@ A recurrence for the running time T(n) of FIND-MAXIMUM-SUBARRAY: T(n) = &Theta;(
 
 ## 4.2 Strassen's algorithm for matrix multiplication
 
-If A = (a<sub>ij</sub>) and B = (b<sub>ij</sub>) are square n &times; n matrices, then in the product C = A &sdot; B, we define the entry c<sub>ij</sub>, for i, j = 1,2 ,..., n, by
+If A = (a<sub>ij</sub>) and B = (b<sub>ij</sub>) are square n &times; n matrices, then in the product C = A &sdot; B, we define the entry c<sub>ij</sub>, for i, j = 1,2 ,..., n, by c<sub>ij</sub> = &sum;<sub>k=1</sub><sup>n</sup>a<sub>ik</sub>&sdot;b<sub>kj</sub>.
 
-> c<sub>ij</sub> = &sum;<sub>k=1</sub><sup>n</sup>a<sub>ik</sub>&sdot;b<sub>kj</sub>.
+The following procedure takes n &times; n matrices A and B and multiplies them, returning their n &times; n product C. We assume that each matrix has an attribute rows, giving the number of rows in the matrix.
+
+```
+SQUARE-MATRIX-MULTIPLY(A, B)
+	n = A.rows
+	let C be a new n * n matrix
+	for i = 1 to n
+		for j = 1 to n
+			cij = 0
+			for k = 1 to n
+				cij = cij + aik * bkj
+	return C
+```
+
+The SQUARE-MATRIX-MULTIPLY procedure takes &Theta;(n<sup>3</sup>).
+
+**A simple divide-and-conquer algorithm**
+
+Suppose that we partition each of A, B, and C into four n/2 &times; n/2 matrices and we could obtain the following four equations:
+
+>C<sub>11</sub> = A<sub>11</sub> &sdot; B<sub>11</sub> + A<sub>12</sub> &sdot; B<sub>21</sub>.
+
+>C<sub>12</sub> = A<sub>11</sub> &sdot; B<sub>12</sub> + A<sub>12</sub> &sdot; B<sub>22</sub>.
+
+>C<sub>21</sub> = A<sub>21</sub> &sdot; B<sub>11</sub> + A<sub>22</sub> &sdot; B<sub>21</sub>.
+
+>C<sub>22</sub> = A<sub>21</sub> &sdot; B<sub>12</sub> + A<sub>22</sub> &sdot; B<sub>22</sub>.
+
+Then we could use these equations to create a straightforward, recursive, divide-and-conquer algorithm:
+
+```
+```
+
 
 
 
