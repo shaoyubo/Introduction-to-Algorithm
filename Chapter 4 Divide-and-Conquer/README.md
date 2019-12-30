@@ -58,6 +58,10 @@ A recurrence for the running time T(n) of FIND-MAXIMUM-SUBARRAY: T(n) = &Theta;(
 
 ## 4.2 Strassen's algorithm for matrix multiplication
 
+If A = (a<sub>ij</sub>) and B = (b<sub>ij</sub>) are square n &times; n matrices, then in the product C = A &sdot; B, we define the entry c<sub>ij</sub>, for i, j = 1,2 ,..., n, by
+
+> c<sub>ij</sub> = &sum;<sub>k=1</sub><sup>n</sup>a<sub>ik</sub>&sdot;b<sub>kj</sub>.
+
 
 
 
