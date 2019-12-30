@@ -184,6 +184,20 @@ In a recursion tree, each node represents the cost of a single subproblem somewh
 
 ## 4.5 The master method for solving recurrences
 
+**Theorem 4.1 (Master theorem)**
+
+Let a &ge; 1 and b &ge; 1 be constants, let f(n) be a function, and let T(n) be defined on the nonnegative integers by the recurrence
+
+> T(n) = aT(n/b) + f(n),
+
+where we interpret n/b to mean either &lfloor;n/b&rfloor; or &lceil;n/b&rceil;. Then T(n) has the following asymptotic bounds:
+
+1. If f(n) = O(n<sup>log<sub>b</sub>a - &epsilon;</sup>) for some constant &epsilon; > 0, then T(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>).
+
+2.
+
+3.
+
 
 
 
