@@ -52,6 +52,11 @@ FIND-MAXIMUM-SUBARRAY(A, low, high)
 			return (cross-low, cross-high, cross-sum)
 ```
 
+**Analyzing the divide-and-conquer algorithm**
+
+A recurrence for the running time T(n) of FIND-MAXIMUM-SUBARRAY: T(n) = &Theta;(1) if n = 1, T(n) = 2T(n/2) + &Theta;(n) if n > 1. And the solution for T(n) is &Theta;(nlgn).
+
+## 4.2 Strassen's algorithm for matrix multiplication
 
 
 
