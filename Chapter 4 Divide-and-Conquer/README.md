@@ -91,7 +91,21 @@ Suppose that we partition each of A, B, and C into four n/2 &times; n/2 matrices
 Then we could use these equations to create a straightforward, recursive, divide-and-conquer algorithm:
 
 ```
+SQUARE-MATRIX-MULTIPLY-RECURSIVE(A, B)
+	n = A.rows
+	let C be a new n * n matrix
+	if n == 1
+		c11 = a11 * b11
+	else
+		partition A, B, and C 
+		C11 = SQUARE-MATRIX-MULTIPLY-RECURSIVE(A11, B11) + SQUARE-MATRIX-MULTIPLY-RECURSIVE(A12, B21)
+		C12 = SQUARE-MATRIX-MULTIPLY-RECURSIVE(A11, B12) + SQUARE-MATRIX-MULTIPLY-RECURSIVE(A12, B22)
+		C21 = SQUARE-MATRIX-MULTIPLY-RECURSIVE(A21, B11) + SQUARE-MATRIX-MULTIPLY-RECURSIVE(A22, B21)
+		C22 = SQUARE-MATRIX-MULTIPLY-RECURSIVE(A21, B12) + SQUARE-MATRIX-MULTIPLY-RECURSIVE(A22, B22)
+	return C
 ```
+
+Thus, the recurrence for the running time of SQUARE-MATRIX-MULTIPLY-RECURSIVE is T(n) = &Theta;(1) if n = 1, T(n) = 8T(n/2) + &Theta;(n<sup>2</sup>) if n > 1. And the running time if T(n) = &Theta;(n<sup>3</sup>).
 
 
 
