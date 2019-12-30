@@ -194,9 +194,11 @@ where we interpret n/b to mean either &lfloor;n/b&rfloor; or &lceil;n/b&rceil;. 
 
 1. If f(n) = O(n<sup>log<sub>b</sub>a - &epsilon;</sup>) for some constant &epsilon; > 0, then T(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>).
 
-2.
+2. If f(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>), then T(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>lgn).
+ 
+3. If f(n) = &Omega;(n<sup>log<sub>b</sub>a + &epsilon;</sup>) for some constant &epsilon; > 0, and if af(n/b) &le; cf(n) for some constant c < 1 and all sufficiently large n, then T(n) = &Theta;(f(n)).
 
-3.
+
 
 
 
