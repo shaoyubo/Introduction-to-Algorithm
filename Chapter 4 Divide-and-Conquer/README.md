@@ -113,13 +113,58 @@ Four steps:
 
 1. Divide the input matrices A and B and output matrix C into n/2 &times; n/2 submatrices. This step take &Theta;(1) time by index calculation, just as in SQUARE-MATRIX-MULTIPLY-RECURSIVE.
 
-2. Create 10 matrices S<sub>1</sub>, S<sub>2</sub>,..., S<sub>10</sub>, each of which is n/2 &times; n/2 and is the sum or difference of two matrices created in step 1. We can create all 10 matrices in &Theta;(n<sub>2</sub>) time.
+2. Create 10 matrices S<sub>1</sub>, S<sub>2</sub>,..., S<sub>10</sub>, each of which is n/2 &times; n/2 and is the sum or difference of two matrices created in step 1. We can create all 10 matrices in &Theta;(n<sup>2</sup>) time.
 
 3. Using the submatrices created in step 1 and the 10 matrices created in step 2, recursively compute seven matrix products P<sub>1</sub>, P<sub>2</sub>,..., P<sub>7</sub>. Each matrix P<sub>i</sub> is n/2 &times; n/2.
 
-4. Compute the desired submatrices C<sub>11</sub>, C<sub>12</sub>, C<sub>21</sub>, C<sub>22</sub> of the result matrix C by adding and subtracting various combinations of the P<sub>i</sub> matrices. We can compute all four submatrices in &Theta;(n<sub>2</sub>) time.
+4. Compute the desired submatrices C<sub>11</sub>, C<sub>12</sub>, C<sub>21</sub>, C<sub>22</sub> of the result matrix C by adding and subtracting various combinations of the P<sub>i</sub> matrices. We can compute all four submatrices in &Theta;(n<sup>2</sup>) time.
 
-Then we can obtain the following recurrence for the running time T(n) of Strassen's algorithm: T(n) = &Theta;(1) if n = 1, T(n) = 7T(n/2) + &Theta;(n<sub>2</sub>) if n > 1. And by the master method, this recurrence has the solution T(n) = &Theta;(n<sub>lg7</sub>).
+Then we can obtain the following recurrence for the running time T(n) of Strassen's algorithm: T(n) = &Theta;(1) if n = 1, T(n) = 7T(n/2) + &Theta;(n<sub>2</sub>) if n > 1. And by the master method, this recurrence has the solution T(n) = &Theta;(n<sup>lg7</sup>).
+
+In step 2, we create the following 10 matrices:
+
+> S<sub>1</sub> = B<sub>12</sub> - B<sub>22</sub>,
+
+> S<sub>2</sub> = A<sub>11</sub> + A<sub>12</sub>,
+
+> S<sub>3</sub> = A<sub>21</sub> + A<sub>22</sub>,
+
+> S<sub>4</sub> = B<sub>21</sub> - B<sub>11</sub>,
+
+> S<sub>5</sub> = A<sub>11</sub> + A<sub>22</sub>,
+
+> S<sub>6</sub> = B<sub>11</sub> + B<sub>22</sub>,
+
+> S<sub>7</sub> = A<sub>12</sub> - A<sub>22</sub>,
+
+> S<sub>8</sub> = B<sub>21</sub> + B<sub>22</sub>,
+
+> S<sub>9</sub> = A<sub>11</sub> - A<sub>21</sub>,
+
+> S<sub>10</sub> = B<sub>11</sub> + B<sub>12</sub>.
+
+In step 3, we recursively mutiply n/2 &times; n/2 matrices seven times to compute the following n/2 &times; n/2 matrices, each of which is the sum or difference of products of A and B submatrices:
+
+> P<sub>1</sub> = A<sub>11</sub> &sdot; S<sub>1</sub>
+
+> P<sub>2</sub> = S<sub>2</sub> &sdot; B<sub>22</sub>
+
+> P<sub>3</sub> = S<sub>3</sub> &sdot; B<sub>11</sub>
+
+> P<sub>4</sub> = A<sub>22</sub> &sdot; S<sub>4</sub>
+
+> P<sub>5</sub> = S<sub>5</sub> &sdot; S<sub>6</sub>
+
+> P<sub>6</sub> = S<sub>7</sub> &sdot; S<sub>8</sub>
+
+> P<sub>7</sub> = S<sub>9</sub> &sdot; S<sub>10</sub>
+
+In step 4, we add and subtract the P<sub>i</sub>
+
+
+
+
+
 
 
 
