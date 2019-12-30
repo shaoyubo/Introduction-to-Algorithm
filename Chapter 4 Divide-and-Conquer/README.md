@@ -119,7 +119,7 @@ Four steps:
 
 4. Compute the desired submatrices C<sub>11</sub>, C<sub>12</sub>, C<sub>21</sub>, C<sub>22</sub> of the result matrix C by adding and subtracting various combinations of the P<sub>i</sub> matrices. We can compute all four submatrices in &Theta;(n<sup>2</sup>) time.
 
-Then we can obtain the following recurrence for the running time T(n) of Strassen's algorithm: T(n) = &Theta;(1) if n = 1, T(n) = 7T(n/2) + &Theta;(n<sub>2</sub>) if n > 1. And by the master method, this recurrence has the solution T(n) = &Theta;(n<sup>lg7</sup>).
+Then we can obtain the following recurrence for the running time T(n) of Strassen's algorithm: T(n) = &Theta;(1) if n = 1, T(n) = 7T(n/2) + &Theta;(n<sup>2</sup>) if n > 1. And by the master method, this recurrence has the solution T(n) = &Theta;(n<sup>lg7</sup>).
 
 In step 2, we create the following 10 matrices:
 
@@ -145,21 +145,45 @@ In step 2, we create the following 10 matrices:
 
 In step 3, we recursively mutiply n/2 &times; n/2 matrices seven times to compute the following n/2 &times; n/2 matrices, each of which is the sum or difference of products of A and B submatrices:
 
-> P<sub>1</sub> = A<sub>11</sub> &sdot; S<sub>1</sub>
+> P<sub>1</sub> = A<sub>11</sub> &sdot; S<sub>1</sub>,
 
-> P<sub>2</sub> = S<sub>2</sub> &sdot; B<sub>22</sub>
+> P<sub>2</sub> = S<sub>2</sub> &sdot; B<sub>22</sub>,
 
-> P<sub>3</sub> = S<sub>3</sub> &sdot; B<sub>11</sub>
+> P<sub>3</sub> = S<sub>3</sub> &sdot; B<sub>11</sub>,
 
-> P<sub>4</sub> = A<sub>22</sub> &sdot; S<sub>4</sub>
+> P<sub>4</sub> = A<sub>22</sub> &sdot; S<sub>4</sub>,
 
-> P<sub>5</sub> = S<sub>5</sub> &sdot; S<sub>6</sub>
+> P<sub>5</sub> = S<sub>5</sub> &sdot; S<sub>6</sub>,
 
-> P<sub>6</sub> = S<sub>7</sub> &sdot; S<sub>8</sub>
+> P<sub>6</sub> = S<sub>7</sub> &sdot; S<sub>8</sub>,
 
-> P<sub>7</sub> = S<sub>9</sub> &sdot; S<sub>10</sub>
+> P<sub>7</sub> = S<sub>9</sub> &sdot; S<sub>10</sub>.
 
-In step 4, we add and subtract the P<sub>i</sub>
+In step 4, we add and subtract the P<sub>i</sub> matrices created in step 3 to constuct the four n/2 &times; n/2 submatrices of the product C. 
+
+> C<sub>11</sub> = P<sub>5</sub> + P<sub>4</sub> - P<sub>2</sub> + P<sub>6</sub>,
+
+> C<sub>12</sub> = P<sub>1</sub> + P<sub>2</sub>,
+
+> C<sub>21</sub> = P<sub>3</sub> + P<sub>4</sub>,
+
+> C<sub>22</sub> = P<sub>5</sub> + P<sub>1</sub> - P<sub>3</sub> - P<sub>7</sub>.
+
+## 4.3 The substitution method for solving recurrences
+
+The substitution method for solving recurrences comprises two steps:
+
+1. Guess the form of the solution.
+
+2. Use mathematical induction to find the constants and show that the solution works.
+
+
+## 4.4 The recursion-tree method for solving recurrences
+
+In a recursion tree, each node represents the cost of a single subproblem somewhere in the set of recursive function invocations. We sum the costs within each level of the tree to obtain a set of per-level costs, and then we sum all the per-level costs to determine the total cost of all levels of the recursion.
+
+## 4.5 The master method for solving recurrences
+
 
 
 
