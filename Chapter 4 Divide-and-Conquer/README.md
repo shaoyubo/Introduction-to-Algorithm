@@ -236,11 +236,11 @@ Let a &ge; 1 and b > 1 be constants, let f(n) be a nonnegative function defined 
 
 To complete the proof of the master theorem, we must now extend our analysis to the sitation in which floors and ceilings appear in the master recurrence, so that the recurrence is defined for all integers, not for just exact powers of b. Obatining a lower bound on 
 
-> T(n) = aT(<lceil>n/b<rceil>) + f(n)
+> T(n) = aT(&lceil;n/b&rceil;) + f(n)
 
 and an upper bound on 
 
-> T(n) = aT(<lfloor>n/b<rfloor>) + f(n)
+> T(n) = aT(&lfloor;n/b&rfloor;) + f(n)
 
 is routine.
 
