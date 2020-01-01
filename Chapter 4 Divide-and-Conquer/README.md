@@ -209,6 +209,7 @@ Let a &ge; 1 and b > 1 be constants, and let f(n) be a nonnegative function defi
 > T(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>) + &sum;<sub>j = 0</sub><sup>log<sub>b</sub>n-1</sub></sup>a<sup>j</sup>f(n/b<sup>j</sup>).
 
 **Lemma 4.3**
+
 Let a &ge; 1 and b > 1 be constants, let f(n) be a nonnegative function defined on exact powers of b. A function g(n) defined over exact powers of b by
 
 > g(n) = &sum;<sub>j = 0</sub><sup>log<sub>b</sub>n-1</sub></sup>a<sup>j</sup>f(n/b<sup>j</sup>) 
@@ -220,6 +221,20 @@ has the following asymptotic bounds for exact powers of b:
 2. If f(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>), then g(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>lgn).
 
 3. If af(n/b) &le; cf(n) for some constant c < 1 and for all sufficiently large n, then g(n) = &Theta;(f(n)).
+
+**Lemma 4.4**
+
+Let a &ge; 1 and b > 1 be constants, let f(n) be a nonnegative function defined on exact powers of b. Define T(n) on exact powers of b by the recurrence T(n) = aT(n/b) + f(n) if n = b<sup>i</sup>, T(n) = &Theta;(1) if n = 1, where i is a positive integer. Then T(n) has the following asymptotic bounds for exact powers of b:
+
+1. If f(n) = O(n<sup>log<sub>b</sub>a - &epsilon;</sup>) for some constant &epsilon; > 0, then g(n) = O(n<sup>log<sub>b</sub>a</sup>).
+
+2. If f(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>), then g(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>lgn).
+
+3. If f(n) = &Omega;(n<sup>log<sub>b</sub>a + &epsilon;</sup>) for some constant &epsilon; > 0, and if af(n/b) &le; cf(n) for some constant c < 1 and all sufficiently large n, then T(n) = &Theta;(f(n)).
+
+
+
+
 
 
 
