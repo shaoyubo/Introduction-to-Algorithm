@@ -198,6 +198,18 @@ where we interpret n/b to mean either &lfloor;n/b&rfloor; or &lceil;n/b&rceil;. 
  
 3. If f(n) = &Omega;(n<sup>log<sub>b</sub>a + &epsilon;</sup>) for some constant &epsilon; > 0, and if af(n/b) &le; cf(n) for some constant c < 1 and all sufficiently large n, then T(n) = &Theta;(f(n)).
 
+## 4.6 Proof of the master theorem
+
+### 4.6.1 The proof for exact powers
+
+**Lemma 4.2**
+
+Let a &ge; 1 and b > 1 be constants, and let f(n) be a nonnegative function defined on exact powers of b. Define T(n) on exact powers of b by the recurrence T(n) = aT(n/b) + f(n) if n = b<sup>i</sup>, T(n) = &Theta;(1) if n = 1, where i is a positive integer. Then
+
+> T(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>) + &sum;<sub>j = 0</sub><sup>log<sub>b</sub>n-1</sub>a<sup>j</sup>f(n/b<sup>j</sup>).
+
+
+
 
 
 
