@@ -232,6 +232,18 @@ Let a &ge; 1 and b > 1 be constants, let f(n) be a nonnegative function defined 
 
 3. If f(n) = &Omega;(n<sup>log<sub>b</sub>a + &epsilon;</sup>) for some constant &epsilon; > 0, and if af(n/b) &le; cf(n) for some constant c < 1 and all sufficiently large n, then T(n) = &Theta;(f(n)).
 
+## 4.6.2 Floors and ceilings
+
+To complete the proof of the master theorem, we must now extend our analysis to the sitation in which floors and ceilings appear in the master recurrence, so that the recurrence is defined for all integers, not for just exact powers of b. Obatining a lower bound on 
+
+> T(n) = aT(<lceil>n/b<rceil>) + f(n)
+
+and an upper bound on 
+
+> T(n) = aT(<lfloor>n/b<rfloor>) + f(n)
+
+is routine.
+
 
 
 
