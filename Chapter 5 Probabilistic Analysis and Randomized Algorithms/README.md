@@ -131,3 +131,26 @@ The number of tosses until the given bin receives a ball follows the geometric d
 
 **How many balls must we toss until every bin contains at least one ball?**
 Let us call a toss in which a ball falls into an empty bin a "hit". We want to know the expected number n of tosses required to get b hits. Thus for each toss in the ith stage, the probability of obtaining a hit is (b - i + 1)/b. Let n<sub>i</sub> denote the number of tosses in the ith stage. Thus, the number of tosses required to get b hits is n = &sum;<sub>i = 1</sub><sup>b</sup> n<sub>i</sub>. Each random variable n<sub>i</sub> has a geometric distribution with probability of success (b - i + 1)/b and thus, we have E[n] = b(ln b + O(1)).
+
+### 5.4.3 Streaks
+
+Suppose you flip a fair coin n times. What is the longest streak of consecutive heads that you expect to see? The answer is &Theta;(lg n).
+
+### 5.4.4 The online hiring problem
+
+As a final example, we consider a variant of the hiring problem. Suppose now that we do not wish to interview all the candidates in order to find the best one. We also do not wish to hire and fire as we find better and better applicants. Instead, we are willing to settle for a candidate who is close to the best, in exchange for hiring exactly once. We must obey one company requirement: after each interviw we must either immediately offer the position to the applicant or immediately reject the applicant. What is the trade-off between minimizing the amount of the interviewing and maximizing the quality of the candidate hired.
+
+We can model this problem in the following ways. After meeting an applicant, we are able to give each one a score; let score(i) denote the score we give to the ith applicant, and assume that no two applicants receive the same score. After we have seen j applicants, we know which of the j has the highest score, but we do not know whether any of the remaining n - j applicants will receive a higher score. We decide to adopt the strategy of selecting a positiv integer k < n, interviewing and then rejecting the first k applicants, and hiring the first applicant thereafter who has a higher score than all preceding applicants. If it turns out that the best-qualified applicant was among the first k interviewed, then we hire the nth applicant. We formalize this strategy in the procedure ON-LINE-MAXIMUM(k,n), which return the index of the candidate we wish to hire.
+
+```
+ON-LINE-MAXIMUM(k, n)
+	bestscore = Integer.MIN_VALUE
+	for i = 1 to k
+		if score(i) > bestscore
+			bestscore = score(i)
+	for i = k + 1 to n
+		if score(i) > bestscore
+			return i
+	return n
+```
+
