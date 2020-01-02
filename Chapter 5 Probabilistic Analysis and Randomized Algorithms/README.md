@@ -130,4 +130,3 @@ The number of balls that fall in a given bin follows the binomial distribution b
 The number of tosses until the given bin receives a ball follows the geometric distribution with probability 1/b and the expected number of tosses until success is b.
 
 **How many balls must we toss until every bin contains at least one ball?**
-
