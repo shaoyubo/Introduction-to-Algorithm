@@ -130,3 +130,4 @@ The number of balls that fall in a given bin follows the binomial distribution b
 The number of tosses until the given bin receives a ball follows the geometric distribution with probability 1/b and the expected number of tosses until success is b.
 
 **How many balls must we toss until every bin contains at least one ball?**
+Let us call a toss in which a ball falls into an empty bin a "hit". We want to know the expected number n of tosses required to get b hits. Thus for each toss in the ith stage, the probability of obtaining a hit is (b - i + 1)/b. Let n<sub>i</sub> denote the number of tosses in the ith stage. Thus, the number of tosses required to get b hits is n = &sum;<sub>i = 1</sub><sup>b</sup> n<sub>i</sub>. Each random variable n<sub>i</sub> has a geometric distribution with probability of success (b - i + 1)/b and thus, we have E[n] = b(ln b + O(1)).
