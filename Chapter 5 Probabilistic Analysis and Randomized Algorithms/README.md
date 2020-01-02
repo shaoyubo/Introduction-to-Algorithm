@@ -119,4 +119,15 @@ Then E[X] = k(k-1)/2n.
 
 For the above two analysis, the yare the same asymptotically: &Theta;(n<sup>1/2</sup>).
 
-### 5.4.2
+### 5.4.2 Balls and bins
+
+Consider a process in which we randomly toss identical balls into b bins, numbered 1, 2, ..., b. The tosses are independent, and on each toss the ball is equally likely to end up in any bin. The probability that a tossed ball lands in any given bin is 1/b. Thus, the ball-tossing process is a sequence of Bernoulli trials with a probability 1/b of success, where success means that the ball falls in the given bin. This model is particularly useful for analyzing hasing and we can answer a variety of interesting questions about the ball-tossing process.
+
+**How many balls fall in a given bin?**
+The number of balls that fall in a given bin follows the binomial distribution b(k;n, 1/b). If we toss n balls, the expected number of balls that fall in the given bin is n/b.
+
+**How many balls must we toss, on the average, until a given bin contains a ball?** 
+The number of tosses until the given bin receives a ball follows the geometric distribution with probability 1/b and the expected number of tosses until success is b.
+
+**How many balls must we toss until every bin contains at least one ball?**
+
