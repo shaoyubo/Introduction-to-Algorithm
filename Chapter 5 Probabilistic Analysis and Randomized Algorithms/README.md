@@ -16,4 +16,20 @@ HIRE-ASSISTANT(n)
 			hire candidate i
 ``` 
 
-Let n be the number of the total candidate and m be the number of people hired. Assume interviewing has a low cost, say c<sub>i</sub>, whereas hiring is expensive, costing c<sub>h</sub>. Then the total cost associated with the above algorithm is O(c<sub>i</sub>n + c<sub>h</sub>m)
+Let n be the number of the total candidate and m be the number of people hired. Assume interviewing has a low cost, say c<sub>i</sub>, whereas hiring is expensive, costing c<sub>h</sub>. Then the total cost associated with the above algorithm is O(c<sub>i</sub>n + c<sub>h</sub>m). No matter how many people we hire, we always interview n candidates and thus always incure the cost c<sub>i</sub>n associated with interviewing. We therefore concentrate on analyzing c<sub>h</sub>m, the hiring cost.
+
+**Worst-case analysis**
+
+In the worst case, we actually hire every candidate that we interview. This situation occurs if the candidates come in strictly increasing order of quality, in which case we hire n times, for a total hiring cost of O(c<sub>h</sub>n).
+
+**Probabilistic analysis**
+
+Probabilistic analysis is the use of probability in the analysis of problems. Most commonly, we use probabilistic analysis to analyze the running time of an algorithm. In order to perform a probabilistic analysis, we must use knowledge of, or make assumptions about, the distribution of the inputs. Then we analyze our algorithm, computing an average-case running time, where we take the average over the distribution of the possible inputs. Thus we are, in effect, averaging the running time over all possible inputs. When reporting such a running time, we will refer to it as the average-case running time.
+
+For the hiring problem, we can assume that the applicants come in a random order. Alternatively, we say that the ranks form a uniform random permutation; that is, each of the possible n! permutations appears with equal probability.
+
+**Randomized algorithms**
+
+
+
+
