@@ -78,13 +78,29 @@ PERMUTE-BY-SORTING(A)
 	n = A.length
 	let P[1 .. n] be a new array
 	for i = 1 to n
-		P[i] = RANDOM(1, n<sup>3</sup>)
+		P[i] = RANDOM(1, n^3)
 	sort A, using P as sort keys
 ```
 
 **Lemma 5.4**
 
 Procedure PERMUTE-BY-SORTING produces a uniform random permutation of the input, assuming that all priorities are distinct.
+
+A better method for generating a random permutation is to permute the given array in place. The procedure RANDOMIZED-IN-PLACE does so in O(n) time.
+
+```
+RANDOMIZED-IN-PLACE(A)
+	n = A.length
+	for i = 1 to n
+		swap A[i] with A[RANDOM(i, n)]
+```
+
+**Lemma 5.5**
+
+Procedure RANDOMIZED-IN-PLACE computes a uniform random permutation.
+
+## 5.4 Probabilistic analysis and further uses of indicator random variables
+
 
 
 
