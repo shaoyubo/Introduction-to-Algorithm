@@ -36,5 +36,6 @@ When analyzing the running time of a randomized algorithm, we take the expectati
 
 ## 5.2 Indicator random variables
 
+In order to analyze many alogrithms, including the hiring problem, we use indicator random variables. Indicator random variables provide a convenient method for converting betwee probabilities and expectations. Suppose we are given a sample space S and an event A. Then the indicator random variable I{A} associated with event A is defined as I{A} = 1 if A occurs, I{A} = 0 if A does not occur.
 
 
