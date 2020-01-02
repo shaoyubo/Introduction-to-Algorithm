@@ -111,6 +111,12 @@ For n = 365, we must have at least 23 days people are in a room, the probability
 
 **An analysis using indicator random variables**
 
-We can use indicator random variables to provide a simpler but approximate analysis of the birthday paradox. For each pair (i, j) of the k people in the room, we define the indicator random variable X<sub>ij</sub>, for 1 &le; i < j &le; k, by X<sub>ij</sub> = 1 if person i and person j have the same birthday, 0 otherwise. Then E[X<sub>ij</sub>] = Pr{person i and person j have the same birthday} = 1/n. Letting X be the random variable that counts the number of pairs of individuals having the same birthday, we have X = &sum;<sub>i = 1</sub><sup>k</sup>&sum;<sub>j = i + 1</sub><sup>k</sup> X<sub>ij</sub>. Then E[X] = k(k-1)/2n. 
+We can use indicator random variables to provide a simpler but approximate analysis of the birthday paradox. For each pair (i, j) of the k people in the room, we define the indicator random variable X<sub>ij</sub>, for 1 &le; i < j &le; k, by X<sub>ij</sub> = 1 if person i and person j have the same birthday, 0 otherwise. Then E[X<sub>ij</sub>] = Pr{person i and person j have the same birthday} = 1/n. Letting X be the random variable that counts the number of pairs of individuals having the same birthday, we have 
 
-For the above two analysis, the yare the same asymptotically: &Theta;(&sqrt;n).
+> X = &sum;<sub>i = 1</sub><sup>k</sup>&sum;<sub>j = i + 1</sub><sup>k</sup> X<sub>ij</sub>. 
+
+Then E[X] = k(k-1)/2n. 
+
+For the above two analysis, the yare the same asymptotically: &Theta;(n<sup>1/2</sup>).
+
+### 5.4.2
