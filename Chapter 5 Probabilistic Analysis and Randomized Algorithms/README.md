@@ -1,39 +1,19 @@
-# Chapter 1. The Role of Algorithms in Computing
+# Chapter 5. Probabilistic Analysis and Randomized Algorithms
 
-## 1.1 Algorithms
+## 5.1 The hiring problem
 
-**Sorting Problem**
+Suppose that you need to hire a new office assistant. Your previous attempts at hiring have been unsuccessful, and you decide to use an employment agency. The employment agency sends you one candidate each day. You interview that person and then decide either to hire that person or not. You must pay the employment agency a small fee to interview an applicant. To actually hire an applicant is more costly, however, since you must fire your current office assistant and pay a substantial hiring fee to the employment agency. You are committed to having, at all times, the best possible person for the job. Therefore, you decide that, after interviwing each applicant, if that applicant is better qualified than the current office assistant, you will fire the current office assistant and hire the new applicant. you are willing to pay the resuling price of this strategy, but you wish to estimate what that price will be.
 
-- Input: A sequence of n numbers a<sub>1</sub>, a<sub>2</sub>, ... , a<sub>n</sub>.
+The procedure HIRE-ASSISTANT, given below, expresses this strategy for hiring in pseudocode:
 
-- Ouput: A permutation (reordering) b<sub>1</sub>, b<sub>2</sub>, ... , b<sub>n</sub> of the input sequence such that 
-b<sub>1</sub> &le; b<sub>2</sub> &le; ... &le; b<sub>n</sub>.
+```
+HIRE-ASSISTANT(n)
+	best = 0
+	for i = 1 to n
+		interview candidate i
+		if candidate i is better than candidate best
+			best = i
+			hire candidate i
+``` 
 
-**What kinds of problems are solved in algorithms?**
-
-- The Human Genome Project (DNA).
-
-- Access and retrieve large amounts of information.
-
-- Public-key cryptography and digital signatures.
-
-- Allocate scarce resources for manufacturing and other commercial enterprises.
-
-**Data Structure**
-
-- A data structure is a way to store and organize data in order to facilitate access and modifications.
-
-## 1.2 Algorithms as a technology
-
-**Efficiency**
-
-- Different algorithms devised to solve the same problem often differ dramatically in their efficiency. These differences can be much more significant than differences due to hardware and software.
-
-**Algorithms and other technologies**
-
-- Total system performance depends on choosing efficient algorithms as much as choosing fast hardware.
-
-
-
-
-
+Let n be the number of the total candidate and m be the number of people hired. Assume interviewing has a low cost, say c<sub>i</sub>, whereas hiring is expensive, costing c<sub>h</sub>. Then the total cost associated with the above algorithm is O(c<sub>i</sub>n + c<sub>h</sub>m)
