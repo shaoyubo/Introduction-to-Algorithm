@@ -38,4 +38,17 @@ When analyzing the running time of a randomized algorithm, we take the expectati
 
 In order to analyze many alogrithms, including the hiring problem, we use indicator random variables. Indicator random variables provide a convenient method for converting betwee probabilities and expectations. Suppose we are given a sample space S and an event A. Then the indicator random variable I{A} associated with event A is defined as I{A} = 1 if A occurs, I{A} = 0 if A does not occur.
 
+**Lemma 5.1**
+
+Given a sample space S and an event A in the sample space S, ket X<sub>A</sub> = I{A}. Then E[X<sub>A</sub>] = Pr{A}.
+
+**Analysis of the hiring problem using indicator random variables**
+
+**Lemma 5.2**
+
+Assumming that the candidates are presented in a random order, algorithm HIRE-ASSISTANT has an average-case total hiring cost of O(c<sub>h</sub>lnn).
+
+## 5.3 Randomized algorithms
+
+
 
