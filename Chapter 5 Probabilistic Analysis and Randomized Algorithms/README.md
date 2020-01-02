@@ -105,4 +105,12 @@ Procedure RANDOMIZED-IN-PLACE computes a uniform random permutation.
 
 Our first example is the birthday paradox. How many people must there be in a room before there is a 50% chance that two of them were born on the same day of the year? To answer this question, we index the people in the room with the integers 1, 2, ..., k, where k is the number of people in the room. We ignore the issue of leap years and assume that all years have n = 365 days. For i = 1, 2, ..., k, let b<sub>i</sub> be the day of the year on which person i's birthday falls, where 1 &le; b<sub>i</sub> &le; n. We also assume that birthdays are uniformly distributed across the n days of the year, so that Pr{b<sub>i</sub> = r} = 1/n for i = 1, 2, ..., k and r = 1, 2, ..., n.
 
-The probability that two given people, say i and j, have matching birthdays depends on whether the random selection of birthdays is independent. We assume from now on that birthdays are independent, so that the probability that i's birthday and j's birthday both fall on day r is Pr{b<sub>i</sub> = r and b<sub>j</sub> = r} = 1/n<sup>2</sup>. Thus, the probability that they both fall on the same day is Pr{b<sub>i</sub> = b<sub>j</sub>} = 1/n.
+The probability that two given people, say i and j, have matching birthdays depends on whether the random selection of birthdays is independent. We assume from now on that birthdays are independent, so that the probability that i's birthday and j's birthday both fall on day r is Pr{b<sub>i</sub> = r and b<sub>j</sub> = r} = Pr{b<sub>i</sub>}Pr{b<sub>j</sub> = 1/n<sup>2</sup>. Thus, the probability that they both fall on the same day is Pr{b<sub>i</sub> = b<sub>j</sub>} = 1/n. More intuitively, once b<sub>i</sub> is chosen, the probability that b<sub>j</sub> is chosen to be the same day is 1/n.
+
+For n = 365, we must have at least 23 days people are in a room, the probability is at least 1/2 that at least two people have the same birthday.
+
+**An analysis using indicator random variables**
+
+We can use indicator random variables to provide a simpler but approximate analysis of the birthday paradox. For each pair (i, j) of the k people in the room, we define the indicator random variable X<sub>ij</sub>, for 1 &le; i < j &le; k, by X<sub>ij</sub> = 1 if person i and person j have the same birthday, 0 otherwise. Then E[X<sub>ij</sub>] = Pr{person i and person j have the same birthday} = 1/n. Letting X be the random variable that counts the number of pairs of individuals having the same birthday, we have X = &sum;<sub>i = 1</sub><sup>k</sup>&sum;<sub>j = i + 1</sub><sup>k</sup> X<sub>ij</sub>. Then E[X] = k(k-1)/2n. 
+
+For the above two analysis, the yare the same asymptotically: &Theta;(&sqrt;n).
