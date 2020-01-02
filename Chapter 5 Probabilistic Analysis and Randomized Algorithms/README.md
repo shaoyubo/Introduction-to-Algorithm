@@ -101,7 +101,8 @@ Procedure RANDOMIZED-IN-PLACE computes a uniform random permutation.
 
 ## 5.4 Probabilistic analysis and further uses of indicator random variables
 
+### 5.4.1 The birthday paradox
 
+Our first example is the birthday paradox. How many people must there be in a room before there is a 50% chance that two of them were born on the same day of the year? To answer this question, we index the people in the room with the integers 1, 2, ..., k, where k is the number of people in the room. We ignore the issue of leap years and assume that all years have n = 365 days. For i = 1, 2, ..., k, let b<sub>i</sub> be the day of the year on which person i's birthday falls, where 1 &le; b<sub>i</sub> &le; n. We also assume that birthdays are uniformly distributed across the n days of the year, so that Pr{b<sub>i</sub> = r} = 1/n for i = 1, 2, ..., k and r = 1, 2, ..., n.
 
-
-
+The probability that two given people, say i and j, have matching birthdays depends on whether the random selection of birthdays is independent. We assume from now on that birthdays are independent, so that the probability that i's birthday and j's birthday both fall on day r is Pr{b<sub>i</sub> = r and b<sub>j</sub> = r} = 1/n<sup>2</sup>. Thus, the probability that they both fall on the same day is Pr{b<sub>i</sub> = b<sub>j</sub>} = 1/n.
