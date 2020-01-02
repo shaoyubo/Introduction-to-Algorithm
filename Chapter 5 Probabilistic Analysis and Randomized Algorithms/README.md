@@ -46,9 +46,46 @@ Given a sample space S and an event A in the sample space S, ket X<sub>A</sub> =
 
 **Lemma 5.2**
 
-Assumming that the candidates are presented in a random order, algorithm HIRE-ASSISTANT has an average-case total hiring cost of O(c<sub>h</sub>lnn).
+Assumming that the candidates are presented in a random order, algorithm HIRE-ASSISTANT has an average-case total hiring cost of O(c<sub>h</sub>ln n).
 
 ## 5.3 Randomized algorithms
+
+For the hiring problem, the only change needed in the code is to randomly permute the array.
+
+```
+RANDOMIZED-HIRE-ASSISTANT(n)
+	randomly permute the list of candidates
+	best = 0
+	for i = 1 to n
+		interview candidate i
+		if candidade i is better than candidate best
+			best = i
+			hire candidate i
+```
+
+With this simple change, we have created a randomized algorithm whose performance matches that obtained by assuming that the candidates were presented in a random order.
+
+**Lemma 5.3**
+
+The expected hiring cost of the procedure RANDOMIZED-HIRE-ASSISTANT is O(c<sub>h</sub>ln n).
+
+**Randomly permuting arrays**
+
+Many randomized algorithms randomize the input by permuting the given input array. Our goal is to produce a random permutation of the array. We use a range of 1 to n<sup>3</sup> to make it likely that all the priorities in P are unique.
+
+```
+PERMUTE-BY-SORTING(A)
+	n = A.length
+	let P[1 .. n] be a new array
+	for i = 1 to n
+		P[i] = RANDOM(1, n<sup>3</sup>)
+	sort A, using P as sort keys
+```
+
+**Lemma 5.4**
+
+Procedure PERMUTE-BY-SORTING produces a uniform random permutation of the input, assuming that all priorities are distinct.
+
 
 
 
