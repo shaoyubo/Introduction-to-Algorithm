@@ -69,7 +69,9 @@ The average-case running time of quicksort is much closer to the best case than 
 
 ## 7.3 A randomized version of quicksort
 
-In exploring the average-case behavior of quicksort, we have made an assumption that all permutations of the input numbers are equally likely. In section 5.3, we randomized our algorithm by explicitly permuting the input. We could do so for quicksort also, but a different randomization technique, called random sampling, yields a simpler analysis. Instead of always using A[r] as the pivot, we will select a randomly chosen element from the subarray A[p .. r]. In the new partition procedure, we simply implement the swap before actually partitioning:
+In exploring the average-case behavior of quicksort, we have made an assumption that all permutations of the input numbers are equally likely. In section 5.3, we randomized our algorithm by explicitly permuting the input. We could do so for quicksort also, but a different randomization technique, called random sampling, yields a simpler analysis. Instead of always using A[r] as the pivot, we will select a randomly chosen element from the subarray A[p .. r]. 
+
+In the new partition procedure, we simply implement the swap before actually partitioning:
 
 ```
 RANDOMIZED-PARTITION(A, p, r)
@@ -89,4 +91,18 @@ RANDOMIZED-QUICKSORT(A, p, r)
 ```
 
 ## 7.4 Analysis of quicksort
+
+### 7.4.1 Worst-case analysis
+
+We saw in Section 7.2 that a worst-case split at every level of recursion in quicksort produces &Theta;(n<sup>2</sup>) running time, which, intuitively, is the worst-case running time of the algorithm.
+
+### 7.4.2 Expected running time
+
+We have already seen the intuition behind why the expected running time of RANDOMIZED-QUICKSORT is O(nlg n): if, in each level of recursion, the split induced by RANDOMIZED-QUICKSORT puts any constant fraction of the elements on one side of the partition, then the recursion tree has depth &Theta;(lg n), and O(n) work is performed at each level.
+
+**Running time and comparisons**
+
+**Lemma 7.1** Let X be the number of comparisons performed in line 4 of PARTITION over the entire execution of QUICKSORT on an n-element array. Then the running time of QUICKSORT is O(n + X).
+
+Thus we conclude that, using RANDOMIZED-PARTITION, the expected running time of quicksort is O(nlg n) when element values are distinct.
 
