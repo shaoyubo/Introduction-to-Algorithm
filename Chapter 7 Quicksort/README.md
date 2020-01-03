@@ -12,7 +12,7 @@ Quicksort, like merge sort, applies the divide-and-conquer paradigm introduced i
 
 - Combine: Because the subarrays are already sorted, no work is needed to combine them: the entire array A[p .. r] is now sorted.
 
-The follwoing procedure implements quicksort:
+The following procedure implements quicksort:
 
 ```
 QUICKSORT(A, p, r)
@@ -48,5 +48,19 @@ Then foor any array index k,
 
 3. If k = r, then A[k] = x.
 
+The running time of PARTITION on the subarray A[p .. r] is &Theta;(n), where n = r - p + 1.
 
+## 7.2 Performance of quicksort
+
+The running time of quicksort depends on whether the partitioning is balanced or unbalanced, which in turn depends on which elements are used for partitioning. If the partitioning is balanced, the algorithm runs asymptotically as fast as merge sort. If the partitioning is unbalanced, however, it can run asymptotically as slowly as insertion sort. In this section, we shall informally investigate how quicksort performs under the assumptions of balanced versus unbalanced partitioning.
+
+**Worst-case partitioning**
+
+The worst-case behavior for quicksort occurs when the partitioning routine produces one subproblem with n - 1 elements and one with 0 elements. Then we get the recurrence T(n) = T(n - 1) + T(0) + &Theta;(n) = &Theta;(n<sup>2</sup>).  Thus, if the partitioning is maximally unbalanced at every recursive level of the algorithm, the running time is &Theta;(n<sup>2</sup>). Therefore, the worst-case running time of quicksort is no better than that of insertion sort.
+
+**Best-case partitioning**
+
+In the most even possible split, PARTITION produces two subproblems, each of size no more than n/2. In this case, quicksort runs much faster. The recurrence for the running time is then T(n) = 2T(n/2) + &Theta;(n) = &Theta;(nlg n). 
+
+**Balanced partitioning**
 
