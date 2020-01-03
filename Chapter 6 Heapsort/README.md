@@ -79,3 +79,7 @@ HEAPSORT(A)
 ```
 
 The HEAPSORT procedure takes time O(nlg n), since the call to BUILD-MAX-HEAP takes O(n) and each of the n - 1 calls to MAX-HEAPIFY takes time O(lg n).
+
+## 6.5 Priority queues
+
+
