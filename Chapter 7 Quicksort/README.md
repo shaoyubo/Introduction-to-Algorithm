@@ -64,3 +64,29 @@ In the most even possible split, PARTITION produces two subproblems, each of siz
 
 **Balanced partitioning**
 
+The average-case running time of quicksort is much closer to the best case than to the worst case. For any split of constant proportionality yields a recursion tree of depth &Theta;(lg n), where the cost at each level is O(n). The running time is therefore O(nlg n) whenever the split has constant proportionally.
+
+
+## 7.3 A randomized version of quicksort
+
+In exploring the average-case behavior of quicksort, we have made an assumption that all permutations of the input numbers are equally likely. In section 5.3, we randomized our algorithm by explicitly permuting the input. We could do so for quicksort also, but a different randomization technique, called random sampling, yields a simpler analysis. Instead of always using A[r] as the pivot, we will select a randomly chosen element from the subarray A[p .. r]. In the new partition procedure, we simply implement the swap before actually partitioning:
+
+```
+RANDOMIZED-PARTITION(A, p, r)
+	i = RANDOM(p, r)
+	exchange A[r] with A[i]
+	return PARTITION(A, p ,r)
+```
+
+The new quicksort calls RANDOMIZED-PARTITION in place of PARTITION:
+
+```
+RANDOMIZED-QUICKSORT(A, p, r)
+	if p < r
+		q = RANDOMIZED-PARTITION(A, p, r)
+		RANDOMIZED-QUICKSORT(A, p, q - 1)
+		RANDOMIZED-QUICKSORT(A, q + 1, r)
+```
+
+## 7.4 Analysis of quicksort
+
