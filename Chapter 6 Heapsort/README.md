@@ -33,4 +33,49 @@ The remaining of this chapter presents some basic procedures and shows how they 
 
 ## 6.2 Maintaining the heap property
 
+In order to maintain the max-heap property, we call the procedure MAX-HEAPIFY. Its inputs are an array A and an index i into the array. When it is called, MAX-HEAPIFY assumes that the binary trees rooted at LEFT(i) and RIGHT(i) are max-heaps, but that A[i] might be smaller than its childern, thus violating the max-heap property.
 
+```
+MAX-HEAPIFY(A, i)
+	l = LEFT(i)
+	r = RIGHT(i)
+	if l <= A.heap-size and A[l] > A[i]
+		largest = l
+	else 
+		largest = i
+	if r <= A.heap-size amd A[r] > A[largest]
+		largest = r
+	if largest != i
+		exchange A[i] with A[largest]
+		MAX-HEAPIFY(A, largest)
+```
+
+The running time of MAX-HEAPIFY on a subtree of size n rooted at a given node i is the &Theta;(1) time to fix up the relationships among the elements A[i], A[LEFT(i)], A[RIGHT(i)], plus the time to run MAX-HEAPIFY on a subtree rooted at one of the children of node i. And the running time is T(n) = O(lg n). Alternatively, we can characterize the running time of MAX-HEAPIFY on a node of height h is O(h).
+
+## 6.3 Building a heap
+
+We can use the procedure MAX-HEAPIFY in a bottom-up manner to convert an array A[1 .. n], where n = A.length, into a max-heap. The procedure BUILD-MAX-HEAP goes through the remaining nodes of the tree and runs MAX-HEAPIFY on each one.
+
+```
+BUILD-MAX-HEAP(A)
+	A.heap-size = A.length
+	for i = Math.floor(A.length/2) downto 1
+		MAX-HEAPIFY(A, i)
+```
+
+We can compute a simple upper bound on the running time of BUILD-MAX-HEAP as follows. Each call to MAX-HEAPIFY costs O(lg n) time, and BUILD-MAX-HEAP makes O(n) such calls. Thus, the running time is O(nlg n). This upper bound, though correct, is not asymptotically tight. Actually, we can build a max-heap from an unordered array in linear time.
+
+## 6.4 The heapsort algorithm
+
+The heapsort algorithm starts by using BUILD-MAX-HEAP to build a max-heap on the input array A[1 .. n], where n = A.length.
+
+```
+HEAPSORT(A)
+	BUILD-MAX-HEAP(A)
+	for i = A.length downto 2
+		exchange A[1] with A[i]
+		A.heap-size = A.heap-size - 1
+		MAX-HEAPIFY(A, 1)
+```
+
+The HEAPSORT procedure takes time O(nlg n), since the call to BUILD-MAX-HEAP takes O(n) and each of the n - 1 calls to MAX-HEAPIFY takes time O(lg n).
