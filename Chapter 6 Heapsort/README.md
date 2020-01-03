@@ -82,4 +82,14 @@ The HEAPSORT procedure takes time O(nlg n), since the call to BUILD-MAX-HEAP tak
 
 ## 6.5 Priority queues
 
+In this section, we present one of the most popular applications of a heap: as an efficient priority queue. As with heaps, priority queues come in two forms: max-priority queues and min-priority queues. 
 
+A priority queue is a data structure for maintaining a set S of elements, each with an associated value called a key. A max-priority queue supports the following operations:
+
+- INSERT(S, x) inserts the element x into the set S.
+
+- MAXIMUM(S) returns the element of S with the largest key.
+
+- EXTRACT-MAX(S) removes and returns the element of S with the largest key.
+
+- INCREASE-KEY(S, x, k) increases the value of element x's ke
