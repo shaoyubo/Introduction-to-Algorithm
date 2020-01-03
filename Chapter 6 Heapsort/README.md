@@ -92,4 +92,35 @@ A priority queue is a data structure for maintaining a set S of elements, each w
 
 - EXTRACT-MAX(S) removes and returns the element of S with the largest key.
 
-- INCREASE-KEY(S, x, k) increases the value of element x's ke
+- INCREASE-KEY(S, x, k) increases the value of element x's key to the new value k, which is assumed to be at least as large as x's current key value.
+
+Among their other applications, we can use max-priority queues to schedule jobs on a shared computer. The max-priority queue keeps track of the jobs to be performed and their relative priorities. When a job is finished or interrupted, the scheduler selects the highest-priority job from among those pending by calling EXTRACT-MAX/ The scheduler can add a new job to the queue at any time by calling INSERT.
+
+Alternatively, a min-priority supports the operations INSERT, MINIMUM, EXTRACT-MIN, and DECREASE-KEY. A min-priority queue can be used in an event-driven simulator. And we can use a heap to implement a priority queue.
+
+The procedure HEAP-MAXIMUM implements the MAXIMUM operation in &Theta;(1) time.
+
+```
+HEAP-MAXIMUM(A)
+	return A[1]
+```
+
+The procedure HEAP-EXTRACT-MAX implements the EXTRACT-MAX operation.
+
+```
+HEAP-EXTRACT-MAX(A)
+	if A.heap-size < 1
+		error "heap underflow"
+	max = A[1]
+	A[1] = A[A.heap-size]
+	A.heap-size = A.heap-size - 1
+	MAX-HEAPIFY(A, 1)
+	return max
+```
+
+The running time of HEAP-EXTRACT-MAX is O(lg n).
+
+The procedure HEAP-INCREASE-KEY implements the INCREASE-KEY operation.
+
+```
+```
