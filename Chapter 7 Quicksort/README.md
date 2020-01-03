@@ -100,8 +100,6 @@ We saw in Section 7.2 that a worst-case split at every level of recursion in qui
 
 We have already seen the intuition behind why the expected running time of RANDOMIZED-QUICKSORT is O(nlg n): if, in each level of recursion, the split induced by RANDOMIZED-QUICKSORT puts any constant fraction of the elements on one side of the partition, then the recursion tree has depth &Theta;(lg n), and O(n) work is performed at each level.
 
-**Running time and comparisons**
-
 **Lemma 7.1** Let X be the number of comparisons performed in line 4 of PARTITION over the entire execution of QUICKSORT on an n-element array. Then the running time of QUICKSORT is O(n + X).
 
 Thus we conclude that, using RANDOMIZED-PARTITION, the expected running time of quicksort is O(nlg n) when element values are distinct.
