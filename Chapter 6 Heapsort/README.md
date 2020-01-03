@@ -105,7 +105,7 @@ HEAP-MAXIMUM(A)
 	return A[1]
 ```
 
-The procedure HEAP-EXTRACT-MAX implements the EXTRACT-MAX operation.
+The procedure HEAP-EXTRACT-MAX implements the EXTRACT-MAX operation. The running time of HEAP-EXTRACT-MAX is O(lg n).
 
 ```
 HEAP-EXTRACT-MAX(A)
@@ -118,9 +118,26 @@ HEAP-EXTRACT-MAX(A)
 	return max
 ```
 
-The running time of HEAP-EXTRACT-MAX is O(lg n).
-
-The procedure HEAP-INCREASE-KEY implements the INCREASE-KEY operation.
+The procedure HEAP-INCREASE-KEY implements the INCREASE-KEY operation. The running time of HEAP-INCREASE-KEY on an n-element heap is O(lg n).
 
 ```
+HEAP-INCREASE-KEY(A, i, key)
+	if key < A[i]
+		error "new key is smaller than current key"
+	A[i] = key
+	while i > 1 and A[PARENT(i)] < A[i]
+		exchange A[i] with A[PARENT(i)]
+		i = PARENT(i)
 ```
+ 
+The procedure MAX-HEAP-INSERT implements the INSERT operation. The running time of MAX-HEAP-INSERT on an n-element heap is O(lg n).
+
+```
+MAX-HEAP-INSERT(A, key)
+	A.heap-size = A.heap-size + 1
+	A[A.heap-size] = Integer.MIN_VALUE
+	HEAP-INCREASE-KEY(A, A.heap-size, key)
+```
+
+In summary, a heap can support any priority queue operation on a set of size in O(lg n) time.
+
