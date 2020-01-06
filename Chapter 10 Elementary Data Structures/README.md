@@ -54,9 +54,8 @@ DEQUEUE(Q)
 	else
 		Q.head = Q.head + 1
 	return x
+```
 
 Each operation takes O(1) time.
 
-## 8.2 Linked lists
-
-```
+## 10.2 Linked lists
