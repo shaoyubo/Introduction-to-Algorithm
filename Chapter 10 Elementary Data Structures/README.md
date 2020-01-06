@@ -138,3 +138,37 @@ LIST-INSERT'(L, x)
 ```
 
 ## 10.3 Implementing pointers and objects
+
+**A multiple-array representation of objects**
+
+We can represent a collection of objects that have the same attributes by using an array for each attribute. As an example, we can implement the linked list with three arrays. The array key holds the values of the keys currently in the dynamic set, and the pointers reside in the arrays next and prev. For a given array index x, the array entries key[x], next[x], and prev[x] represent an object in the linked list. Under this interpretation, a pointer x is simply a common index into the key, next, and prev arrays.
+
+**A single-array representation of objects**
+
+The words in a computer memeory are typically addressed by integers from 0 to M - 1, where M is a suitably large integer. In many programming languages, an objet occupies a contiguous set of locations in the computer memory. A pointer is simply the address of the first memory location of the object, and we can address other memory locations within the object by adding an offset to the pointer.
+
+We can use the same strategy for implementing objects in programming environments that do not provide explicit pointer data types.
+
+**Allocating and freeing objects**
+
+To insert a key into a dynamic set represented by a doubly linked list, we must allocate a pointer to a currently unused objet in the linked-list representation. Thus, it is useful to manage the storage of objects not currenty used in the linked-list representation so that one can be allocated. In some systems, a garbage collector is responsible for determining which objects are unused.
+
+Suppose that the arrays in the multiple-array representation have length m and that at some moment the dynamic set contains n &le; m elements. Then n objects represent elements currently in the dynamic set, and the remaining m - n objets are free; the free objects are available to represent elements inserted into the dynamic set in the future.
+
+```
+ALLOCATE-OBJECT()
+	if free == NIL
+		error "out of space"
+	else
+		x = free
+		free = x.next
+		return x
+
+FREE-OBJECT(x)
+	x.next = free
+	free = x
+```
+
+The two procedures run in O(1) time, which makes them quiet practical.
+
+## 10.4 Representing rooted trees
