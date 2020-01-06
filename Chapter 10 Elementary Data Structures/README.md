@@ -111,3 +111,30 @@ LIST-DELETE(L, x)
 
 LIST-DELETE runs in O(1) time, but if we wish to delete an element with a given key, &Theta;(n) time is required in the worst case because we must first call LIST-SEARCH to find the element.
 
+**Sentinels**
+
+The code for LIST-DELETE would be simpler if we could ignore the boundary conditions at the head and tail of the list:
+
+```
+LIST-DELETE'(L, x)
+	x.prev.next = x.next
+	x.next.prev = x.prev
+```
+
+A sentinel is a dummy object that allows us to simplify boundary conditions. We can turn a regular doubly linked list into a circular, doubly linked list with a sentinel, in which the sentinel L.nil lies between the head and tail.
+
+```
+LIST-SEARCH'(L, k)
+	x = L.nil.next
+	while x != L.nil and x.key != k
+		x = x.next
+	return x
+
+LIST-INSERT'(L, x)
+	x.next = L.nil.next
+	L.nil.next.prev = x
+	L.nil.next = x
+	x.prev = L.nil
+```
+
+## 10.3 Implementing pointers and objects
