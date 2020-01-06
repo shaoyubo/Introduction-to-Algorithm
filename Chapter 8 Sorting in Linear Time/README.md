@@ -51,3 +51,16 @@ Counting sort beats the lower bound of &Omega;(nlg n) because it is not a compar
 
 ## 8.3 Radix sort
 
+Radix sort is the algorithm used by the card-sorting machines you now find only in computer museums. The cards have 80 columns, and in each column a machine can punch a hole in one of 12 places. The sorter can be mechanically "programmed" to examine a given column of each card in a deck and distribute the card into one of 12 bins depending on which place has been punched. An operator can then gather the cards bin by bin, so that cards with the first place punched are on top of cards with the second place punched, and so on.
+
+Radix sort solves the problem of card sorting - counterintuitively - by sorting on the least significant digit first. In order for radix sort to work correctly, the digit sorts must be stable. The sort performed by a card sorter is stable, but the operator has to be wary about not changing the order of the cards as they come out of a bin, even though all the cards in a bin have the same digit in the chosen column.
+
+```
+RADIX-SORT(A, d)
+	for i = 1 to d
+		use a stable sort to sort array A on digit i
+```
+
+**Lemma 8.3**
+
+> Given n d-digit numbers in which each digit can take on up to k possible values, RADIX-SORT correctly sorts these numbers in &Theta;(d(n + k)) time if the stable sort it uses takes &Theta;(n + k) time.
