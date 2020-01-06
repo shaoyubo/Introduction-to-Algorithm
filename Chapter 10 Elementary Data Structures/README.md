@@ -33,3 +33,30 @@ POP(S)
 
 Each of the above three stack operations takes O(1) time.
 
+**Queues**
+
+We call the INSERT operation on a queue ENQUEUE, and we call the DELETE operation DEQUEUE. The FIFO property of a queue causes it to operate like a line of customers waiting to pay a cashier. The queue has a head and a tail. When an element is enqueued, it takes its place at the tail of the queue, just as a newly arriving customer takes a place at the end of the line. The element dequeued is always the one at the head of the queue, like the customer at the head of the line who has waited the longest.
+
+The queue has an attribute Q.head that indexes, or points to, its head. If we attempt to dequeue an element from an empty queue, the queue underflows. When Q.head = Q.tail + 1, the queue is full, and if we attempt to enqueue an element, then the queue overflows.
+
+```
+ENQUEUE(Q, x)
+	Q[Q.tail] = x
+	if Q.tail == Q.length
+		Q.tail = 1
+	else
+		Q.tail = Q.tail + 1
+
+DEQUEUE(Q)
+	x = Q[Q.head]
+	if Q.head == Q.length
+		Q.head = 1
+	else
+		Q.head = Q.head + 1
+	return x
+
+Each operation takes O(1) time.
+
+## 8.2 Linked lists
+
+```
