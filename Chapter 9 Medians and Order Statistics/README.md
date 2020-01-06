@@ -51,5 +51,21 @@ RANDOMIZED-SELECT(A, p, r, i)
 
 The worst-case running time for RANDOMIZED-SELECT is &Theta;(n<sup>2</sup>), even to find the minimum, because we could be extremely unlucky and always partition around the largest remaining element, and partitioning takes &Theta;(n) time. We will see that the algorithm has a linear expected running time, though, and because it is randomized, no particular input elicits the worst-case behabvior. Thus, we conclude that we can find any order statistic, and in particular the median, in expected linear time, assuming that the elements are distinct.
 
+## 9.3 Selection in worst-case linear time
+
+We now examine a selection algorithm whose running time is O(n) in the worst case. Like RANDOMIZED-SELECT, the algorithm SELECT finds the desired element by recursively partitioning the input array.
+
+The SELECT algorithm determines the ith smallest of an input array of n > 1 distinct elements by executing the following steps. (If n = 1, then SELECT merely returns its only input value as the ith smallest.)
+
+1. Divide the n elements of the input array into &lfloor;n/5&rfloor; groups of 5 elements each and at most one group made up of the remaining n mod 5 elements.
+
+2. Find the median of each of the &lceil;n/5&rceil; by first insertion-sorting the elements of each group (of which tehre are at moset 5) and then picking the median from the sorted list of group element.
+
+3. Use SELECT recursively to find the median x of the &lceil;n/5&rceil; medians found in step 2. (If there are an even number of medians, then by our convntion, x is the lower median.)
+
+4. Partition the input array around the median-of-medians x using the modified version of PARTITION. Let k be one more than the number of elements on the low side of the partition, so that x is the kth smallest element and there are n - k elements on the high side of the partition.
+
+5. If i = k, then return x. Otherwise, use SELECT recursively to find the ith smallest element on the low side if i < k, or the (i - k)th smallest element on the high side if i > k.
+
 
 
