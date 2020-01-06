@@ -29,7 +29,27 @@ We can, of course, find the maximum with n - 1 comparisons as well.
 
 In fact, we can find both the minimum and the maximum using at most 3&lfloor;n/2&rfloor; comparisons. We do so by maintaining both the maximum and minimum elements seen thus far. Rather than processing each element of the input by comparing it against the current minimum and maximum, at a cost of 2 comparisons per element, we process elements in pairs. We compare pairs if elements from the input first with each other, and then we compare the smaller with the current minimum and the larger to the current maximum, at a cost of 3 comparisons for every 2 elements. 
 
-Let us analyze the total number of comparisons. If n is odd, then we perform 3&lfloor;n/2&rfloor; comparisons. If n is even, we perform 1 initial comparison followed by 3(n - 2)/2 comparisons, for a total of 3n/2 - 2. Thus, in either case, the total number of comparisons is at most 3&lfloor;n/2&rfloor;.
+Let us analyze the total number of comparisons. If n is odd, then we perform 3&lfloor;n/2&rfloor; comparisons. If n is even, we perform 1 initial comparison followed by 3(n - 2)/2 comparisons, for a total of 3n/2 - 2. Thus, in either case, the total number of comparisons is at most 3&lfloor;n/2&rfloor;
+
+## 9.2 Selection in expected linear time
+
+RANDOMIZED-SELECT uses the procedure RANDOMIZED-PARTITION introduced in Section 7.3. Thus, like RANDOMIZED-QUICKSORT, it is a randomized algorithm, since its behavior is determined in part by the output of a random-number generator. The following code for RANDOMIZED-SELECT returns the ith smallest element of the array A[p .. r].
+
+```
+RANDOMIZED-SELECT(A, p, r, i)
+	if p == r
+		return A[p]
+	q = RANDOMIZED-PARTITION(A, p, r)
+	k = q - p + 1
+	if i == k
+		return A[q]
+	elseif i < k
+		return RANDOMIZED-SELECT(A, p, q - 1, i)
+	else 
+		return RANDOMIZED-SELECT(A, q + 1, r, i - k)
+```
+
+The worst-case running time for RANDOMIZED-SELECT is &Theta;(n<sup>2</sup>), even to find the minimum, because we could be extremely unlucky and always partition around the largest remaining element, and partitioning takes &Theta;(n) time. We will see that the algorithm has a linear expected running time, though, and because it is randomized, no particular input elicits the worst-case behabvior. Thus, we conclude that we can find any order statistic, and in particular the median, in expected linear time, assuming that the elements are distinct.
 
 
 
