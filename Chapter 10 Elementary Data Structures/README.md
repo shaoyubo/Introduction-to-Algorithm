@@ -172,3 +172,27 @@ FREE-OBJECT(x)
 The two procedures run in O(1) time, which makes them quiet practical.
 
 ## 10.4 Representing rooted trees
+
+We represent each node of a tree by an object. As with linked lists, we assume that each node contains a key attribute. The remaining attributes of interest are points to other nodes, and they vary according to the type of tree.
+
+**Binary trees**
+
+We use the attributes p, left, and right to store pointers to the parent, left child, and right child of each node in a binary tree T. If x.p = NIL, then x is the root. If node x has no left child, then x.left = NIL, and similarly for the right child. The root of the entire tree T is pointed to by the attribute T.root. If T.root = NIL, then the tree is empty.
+
+**Rooted trees with unbounded branching**
+
+We can extend the scheme for representing a binary tree to any class of trees in which the number of children of each node is at most constant k: we replace the left and right attributes by child<sub>1</sub>, child<sub>2</sub>, ... , child<sub>k</sub>. This scheme no longer works when the number of children of a node is unbounded, since we do not know how many attributes to allocate in advance. Moreover, even if the number of children k is bounded by a large constant but most ndes have a small number of children, we may waste a lot of memory.
+
+Fortunately, there is a clever scheme to represent trees with arbitrary numbes of children. It has the advantage of using only O(n) space for any n-node rooted tree. The left-child, right-sibling representation appears. As before, each node contains a parent pointer p, and T.root points to the root of tree T. Instead of having a pointer to each of its children, however, each node x has only two pointers:
+
+1. x.left-child points to the leftmost child of node x, and 
+
+2. x.right-sibling points to the sibling of x immediately to its right.
+
+If node x has no children, then x.left-children = NIL, and if node x is the rightmost child of its parent, then x.right-sibling = NIL.
+
+**Other tree representation**
+
+We sometimes represent rooted trees in other ways. In Chapter 6, for example, we represented a heap, which is based on a complete binary tree, by a single array plus the indesx of the last node in the heap. The trees that appear in Chapter 21 are traversed only toward the root, and so only the parent pointers are present; there are no pointers to children.
+
+
