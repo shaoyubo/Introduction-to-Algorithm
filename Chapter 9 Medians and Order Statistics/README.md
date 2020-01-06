@@ -59,13 +59,15 @@ The SELECT algorithm determines the ith smallest of an input array of n > 1 dist
 
 1. Divide the n elements of the input array into &lfloor;n/5&rfloor; groups of 5 elements each and at most one group made up of the remaining n mod 5 elements.
 
-2. Find the median of each of the &lceil;n/5&rceil; by first insertion-sorting the elements of each group (of which tehre are at moset 5) and then picking the median from the sorted list of group element.
+2. Find the median of each of the &lceil;n/5&rceil; by first insertion-sorting the elements of each group (of which there are at most 5) and then picking the median from the sorted list of group element.
 
 3. Use SELECT recursively to find the median x of the &lceil;n/5&rceil; medians found in step 2. (If there are an even number of medians, then by our convntion, x is the lower median.)
 
 4. Partition the input array around the median-of-medians x using the modified version of PARTITION. Let k be one more than the number of elements on the low side of the partition, so that x is the kth smallest element and there are n - k elements on the high side of the partition.
 
 5. If i = k, then return x. Otherwise, use SELECT recursively to find the ith smallest element on the low side if i < k, or the (i - k)th smallest element on the high side if i > k.
+
+The worst-case running time of SELECT is therefore linear. As in a comparison sort, SELECT and RANDOMIZED-SELECT determine information about the relative order of elements only by comparing elements. Recall from Chapter 8 that sorting requires &Omega;(nlg n) time in the comparison model, even on average. The linear-time sorting algorithms in Chapter 8 make assumptions in this chapter do not require any assumptions about the input. They are not suject to the &Omega;(nlg n) lower bound because they manage to solve the selection problem without sorting. Thus, solving the selection problem by sorting and indexing, as preseneted in the introduction to this chapter, is asymptotically inefficient.
 
 
 
