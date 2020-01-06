@@ -8,3 +8,4 @@ In this section, we assume without loss of generality that all the input element
 
 **The decision-tree model**
 
+We can view comparison sorts abstractly in terms of decision trees. A decision tree is a full binary tree that represents the comparisons between elements that are performed by a particular sorting algorithm operating on an input of a given size. In a decision tree, we annotate each internal node by i:j for some i and j in the range 1 &le; i, j &le;n, where n is the number of elements in the input sequence. We also annotate each leaf by a permutation &pi;(1), &pi;(2), ..., &pi;(n).
