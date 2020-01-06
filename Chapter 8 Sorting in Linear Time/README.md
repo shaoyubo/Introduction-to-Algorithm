@@ -64,3 +64,7 @@ RADIX-SORT(A, d)
 **Lemma 8.3**
 
 > Given n d-digit numbers in which each digit can take on up to k possible values, RADIX-SORT correctly sorts these numbers in &Theta;(d(n + k)) time if the stable sort it uses takes &Theta;(n + k) time.
+
+**Lemma 8.4**
+
+> Given n b-bit numbers and any positive integer r &le; b, RADIX-SORT correctly sorts these numbers in &Theta;((b/r)(n + 2<sup>r</sup>)) time if the stable sort it uses take &Theta;(n + k) time for inputs in the range 0 to k.
