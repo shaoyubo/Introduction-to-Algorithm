@@ -74,7 +74,7 @@ What does this analysis mean? If the number of hash-table slots is at least prop
 
 Two of the schemes, hashing by division and hashing by multiplication, are heuristic in nature, whereas the third scheme, universal hashing, uses randomization to provide provably good performance.
 
-##What makes a good hash function?**
+**What makes a good hash function?**
 
 A good hash function satisfies the assumption of simple uniform hashing: each key is equally likely to hash to any of the m slots, independently of where any other key has hashed to.
 
@@ -112,4 +112,8 @@ The following theorem shows that a universal class of hash functions gives good 
 
 **Theorem 11.5**
 
-The class H<sub>pm</sub> of hash functions defined by h<sub>ab</sub> = ((ak + b) mod p) mod m and H<sub>pm</sub> = {h<sub>ab</sub>: a &in; Z<sub>p</sub><sup>*</sup>  and b &in; Z<sub>p</sub> }  is universal.
+> The class H<sub>pm</sub> of hash functions defined by h<sub>ab</sub> = ((ak + b) mod p) mod m and H<sub>pm</sub> = {h<sub>ab</sub>: a &in; Z<sub>p</sub><sup>*</sup>  and b &in; Z<sub>p</sub> }  is universal.
+
+## 11.4 Open addressing
+
+In open addressing, all elements occupy the hash table itself.
