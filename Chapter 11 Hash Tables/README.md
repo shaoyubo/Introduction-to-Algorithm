@@ -148,4 +148,12 @@ HASH-SEARCH(T, k)
 	return NIL
 ```
 
-In our 
+In our analysis, we assume uniform hashing: the probe sequence of each key is equally likely to be any of the m! permutations of 0, 1, ..., m - 1. Uniform hashing generalizes the notion of simple uniform hashing defined earlier to a hash function that produces not just a single number, but a whole probe sequence.
+
+We will examine three commonly used techniques to compute the probe sequences required for open addressing: linear probing, quadratic probing, and double hashing.
+
+**Linear probing**
+
+Given an ordinary hash function h': U &rarr; {0, 1, ..., m - 1}, which we refer to as an auxillary hash function, the method for linear probing uses the hash function 
+
+> h(k, i) = (h'(k) + i) mod m for i = 0, 1, ..., m - 1.
