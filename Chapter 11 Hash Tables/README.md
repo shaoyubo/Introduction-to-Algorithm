@@ -157,3 +157,42 @@ We will examine three commonly used techniques to compute the probe sequences re
 Given an ordinary hash function h': U &rarr; {0, 1, ..., m - 1}, which we refer to as an auxillary hash function, the method for linear probing uses the hash function 
 
 > h(k, i) = (h'(k) + i) mod m for i = 0, 1, ..., m - 1.
+
+**Quadratic probing**
+
+Quadratic probing uses a hash function of the form
+
+> h(k, i) = (h'(k) + c<sub>1</sub>i + c<sub>2</sub>i<sup>2</sup>) mod m,
+
+where h' is an auxiliary hash function, c<sub>1</sub> and c<sub>2</sub> are positive auxiliary constants, and i = 0, 1, ..., m - 1.
+
+**Double hashing**
+
+Double hashing offers one of the best methods available for open addressing because the permutations produced have many of the characteristics of randomly chosen permutations. Double hashing uses a hash function of the form
+
+> h(k, i) = (h<sub>1</sub>(k) + ih<sub>2</sub>(k)) mod m, 
+
+where both h<sub>1</sub> and h<sub>2</sub> are auxiliary hash functions.
+
+**Analysis of open-addressing hashing**
+
+As in our analysis of chaining, we express our analysis of open addressing in terms of the load factor &alpha; = n/m of the hash table. 
+
+**Theorem 11.6**
+
+> Give an open-address hash table with load factor &alpha; = n/n < 1, the expected number of probes in an unsuccessful search is at most 1/(1 - &alpha;), assuming uniform hashing.
+
+**Corollary 11.7**
+
+> Inserting an element into an open-address hash table with load factor &alpha; requires at most 1/(1 - &alpha;) probes on average, assuming uniform hashing.
+
+**Theorem 11.8**
+
+Given an open-address hash table with load factor &alpha; < 1, the expected number of probes in a successful search is at most
+
+> 1/&alpha; ln (1/(1 - &alpha;)), 
+
+assuming uniform hashing and assuming that each key in the table is equally likely to be searched for.
+
+## 11.5 Perfect hashing
+
