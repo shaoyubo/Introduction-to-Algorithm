@@ -25,3 +25,10 @@ Each of these operation takes only O(1) time.
 
 ## 11.2 Hash tables
 
+The downside of direct addressing is obvious: if the universe U is large, storing a table T of size |U| may be impractical, or even impossible, given the memory availalbe on a typical computer. Furthermore, the set K of keys actually stored may be so small relative to U that most of the space allocated for T would be wasted.
+
+When the set K of keys stored in a dictionary is much smaller than the universe U of all possible keys, a hash table requires much less storage than a direct-address table. Specifically, we can reduce the storage requirement to &Theta;(|K|) while we maintain the benefit that searching for an element in the hash table still require O(1) time. The catch is that this bound is for the average-case time, whereas for direct addressing it holds for the worst-case time.
+
+With direct addressing, an element with key k is stored in slot k. With hashing, this element is stored in slot h(k); that is, we use a hash function h to compute the slot from the key k. Here, h maps the universe U of keys into the slots of a hash table T[0 .. m - 1]:
+
+> h: U &arrow; {0, 1, ..., m - 1}
