@@ -98,3 +98,18 @@ where kA mod 1 means the fractional part of kA, that is kA - &lfloor;kA&rfloor;.
 
 ### 11.3.3 Universal hashing
 
+If a malicious adversary chooses the keys to be hashed by some fixed hash function, then the adversary can choose n keys that all hash to the same slot, yielding an average retrieval time of &Theta;(n). Any fixed hash function is vulnerable to such terrible worst-case behavior; the only effective way to improve the situation is to choose the hash function randomly in a way that is independent of the keys that are actually going to be sorted. This approach, called universal hashing, can yield provably good performance on average, no matter which keys the adversary chooses.
+
+The following theorem shows that a universal class of hash functions gives good average-case behavior. Recall that n<sub>i</sub> denotes the length of list T[i].
+
+**Theorem 11.3**
+
+> Suppose that a hash function h is chosen randomly from a universal collection of hash functions and has been used to hash n keys into a table T of size m, using chaining to solve collisions. If key k is not in the table, then the expected length E[n<sub>h(k)</sub>] of the list that key k hashes to is at most the load factor &alpha; = n/m. If key k is in the table, then the expected length E[n<sub>h(k)</sub>] of the list containing key k is at most 1 + &alpha;.
+
+**Corollary 11.4**
+
+> Using universal hashing and collision resolution by chaining in an initially empty tabl with m slots, it takes expected time &Theta;(n) to handle any sequence of n INSERT, SEARCH, and DELETE operations containing O(m) INSERT operations.
+
+**Theorem 11.5**
+
+The class H<sub>pm</sub> of hash functions defined by h<sub>ab</sub> = ((ak + b) mod p) mod m and H<sub>pm</sub> = {h<sub>ab</sub>: a &in; Z<sub>p</sub><sup>*</sup>  and b &in; Z<sub>p</sub> }  is universal.
