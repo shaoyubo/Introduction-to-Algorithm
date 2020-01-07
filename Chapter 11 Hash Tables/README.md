@@ -62,10 +62,10 @@ How well does hashing with chaining perform. Given a hash table T with m slots t
 
 **Theorem 11.1** 
 
-> In a hash table in which collisions are resolved by chaining, an unsuccessful search takes average-case time &Theta(1 + &alpha;);, under the assumption of simple uniform hashing.
+> In a hash table in which collisions are resolved by chaining, an unsuccessful search takes average-case time &Theta;(1 + &alpha;), under the assumption of simple uniform hashing.
 
 **Theorem 11.2**
 
-> In a hash table in which collisions are resolved by chaining, a successful search takes average-case time &Theta(1 + &alpha;);, under the assumption of simple uniform hashing.
+> In a hash table in which collisions are resolved by chaining, a successful search takes average-case time &Theta;(1 + &alpha;), under the assumption of simple uniform hashing.
 
 What does this analysis mean? If the number of hash-table slots is at least proportional to the number of elements in the table, we have n = O(m) and, consequently, &alpha; = n/m = O(m)/m = O(1). Thus, searching takes constant time on average. Since insertion O(1) worst-case time and deletion takes O(1) worst-case time when the lists are doubly linked, we can support all dictionary operations in O(1) time on average.
