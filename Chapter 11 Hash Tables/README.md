@@ -116,4 +116,36 @@ The following theorem shows that a universal class of hash functions gives good 
 
 ## 11.4 Open addressing
 
-In open addressing, all elements occupy the hash table itself.
+In open addressing, all elements occupy the hash table itself. That is, each table entry contains either an element of the dynamic set or NIL. 
+
+The HASH-INSERT procedure takes as input a hash table T and a key k. If either returns the slot number where it stores key k or flags an error because the hash table is already full.
+
+```
+HASH-INSERT(T, k)
+	i = 0
+	repeat
+		j = h(k, i)
+		if T[j] == NIL
+			T[j] = k
+			return j
+		else 
+			i = i + 1
+	until i == m
+	error "hash table overflow"
+```
+
+The procedure HASH-SEARCH takes as input a hash table T and a key k, returning j if it finds that slot j contains key k, or NIL if key k is not present in table T.
+
+```
+HASH-SEARCH(T, k)
+	i = 0
+	repeat
+		j = h(k, i)
+		if T[j] == k
+			return j
+		i = i + 1
+	until i == m or T[j] == NIL
+	return NIL
+```
+
+In our 
