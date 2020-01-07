@@ -69,3 +69,32 @@ How well does hashing with chaining perform. Given a hash table T with m slots t
 > In a hash table in which collisions are resolved by chaining, a successful search takes average-case time &Theta;(1 + &alpha;), under the assumption of simple uniform hashing.
 
 What does this analysis mean? If the number of hash-table slots is at least proportional to the number of elements in the table, we have n = O(m) and, consequently, &alpha; = n/m = O(m)/m = O(1). Thus, searching takes constant time on average. Since insertion O(1) worst-case time and deletion takes O(1) worst-case time when the lists are doubly linked, we can support all dictionary operations in O(1) time on average.
+
+## 11.3 Hash functions
+
+Two of the schemes, hashing by division and hashing by multiplication, are heuristic in nature, whereas the third scheme, universal hashing, uses randomization to provide provably good performance.
+
+##What makes a good hash function?**
+
+A good hash function satisfies the assumption of simple uniform hashing: each key is equally likely to hash to any of the m slots, independently of where any other key has hashed to.
+
+**Interpreting keys as natural numbers**
+
+Most hash functions assume that the universe of keys is the set N = {0, 1, 2, ...} of natural numbers. Thus, if the keys are not natural numbers, we find a way to interpret them as natural numbers. For example, we can interpret a characater string as an integer expressed in suitable radix notation. In the context of a given application, we can usually devise some such method for interpreting each key as a possibly large natural number.
+
+### 11.3.1 The division method
+
+In the division method for creating hash functions, we map a key k into one of m slots by taking the remainder of k divided by m. That is, the hash function is 
+
+> h(k) = k mod m.
+
+### 11.3.2 The multiplication method
+
+The multiplication method for creating hash functions operates in two steps. First, we multiply the key k by a constant A in the range 0 < A < 1 and extract the fractional part of KA. Then we multiply this value by m and take the floor of the result. In short, the hash function is 
+
+> h(k) = &lfloor;m(kA mod 1)&rfloor;
+
+where kA mod 1 means the fractional part of kA, that is kA - &lfloor;kA&rfloor;.
+
+### 11.3.3 Universal hashing
+
